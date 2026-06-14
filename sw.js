@@ -1,6 +1,6 @@
-/* Service worker: offline app shell + always-fresh results.
-   Bump CACHE when you change app files. */
-const CACHE = "wc26-v2";
+/* Service worker — network-first so code & results are always fresh,
+   with cache as an offline fallback. Bump CACHE on any shipped change. */
+const CACHE = "wc26-v3";
 const SHELL = [
   ".",
   "index.html",
@@ -17,7 +17,8 @@ self.addEventListener("install", e => {
 
 self.addEventListener("activate", e => {
   e.waitUntil(
-    caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
+    caches.keys()
+      .then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
@@ -25,20 +26,18 @@ self.addEventListener("activate", e => {
 self.addEventListener("fetch", e => {
   const req = e.request;
   if (req.method !== "GET") return;
-  const url = new URL(req.url);
 
-  // Results: network-first so an online tab always gets the latest scores.
-  if (url.pathname.endsWith("data/matches.json")) {
-    e.respondWith(
-      fetch(req).then(res => {
-        const copy = res.clone();
-        caches.open(CACHE).then(c => c.put(req, copy));
+  // Network-first for everything: always try the live version, fall back to
+  // cache only when offline. Keeps the cache warm for offline use.
+  e.respondWith(
+    fetch(req)
+      .then(res => {
+        if (res && res.ok) {
+          const copy = res.clone();
+          caches.open(CACHE).then(c => c.put(req, copy));
+        }
         return res;
-      }).catch(() => caches.match(req))
-    );
-    return;
-  }
-
-  // App shell: cache-first for instant loads / offline.
-  e.respondWith(caches.match(req).then(hit => hit || fetch(req)));
+      })
+      .catch(() => caches.match(req).then(hit => hit || caches.match("index.html")))
+  );
 });
