@@ -1,6 +1,6 @@
 /* Service worker — offline fallback only. Never pre-caches, never serves
    cached content while online. This prevents stale code from getting stuck. */
-const CACHE = "wc26-v9";
+const CACHE = "wc26-v10";
 
 self.addEventListener("install", e => {
   // Skip waiting immediately — no pre-caching that could block or go stale.

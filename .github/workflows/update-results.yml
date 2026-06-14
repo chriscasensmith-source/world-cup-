@@ -4,7 +4,9 @@ name: Update World Cup results
 # Add a free token as repo secret FOOTBALL_DATA_API_TOKEN to enable.
 on:
   schedule:
-    - cron: "*/30 * * * *"   # every 30 minutes (UTC)
+    # GitHub throttles scheduled runs under load, so request frequently
+    # (every 5 min) to maximize the odds a run fires close to schedule.
+    - cron: "*/5 * * * *"
   workflow_dispatch:          # lets you run it manually from the Actions tab
 
 permissions:
