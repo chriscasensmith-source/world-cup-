@@ -582,6 +582,11 @@
           });
         });
       }).catch(() => {});
+
+      // New SW activates and sends RELOAD → hard-reload to pick up fresh code.
+      navigator.serviceWorker.addEventListener("message", e => {
+        if (e.data?.type === "RELOAD") hardReload();
+      });
     }
 
     async function hardReload() {
