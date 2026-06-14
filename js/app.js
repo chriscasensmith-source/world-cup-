@@ -563,14 +563,41 @@
     });
 
     if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
-      navigator.serviceWorker.register("sw.js").catch(() => {});
-      // Auto-reload once when a new version takes over, so code is never stale.
+      navigator.serviceWorker.register("sw.js").then(reg => {
+        // On iOS PWA the browser won't check for a new SW unless we ask.
+        // Kick an update check on every page focus and every 5 minutes.
+        const checkUpdate = () => reg.update().catch(() => {});
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState === "visible") checkUpdate();
+        });
+        setInterval(checkUpdate, 5 * 60 * 1000);
+
+        // When a new SW is found, wait for it to finish installing, then
+        // show a tap-to-reload banner instead of silently reloading mid-use.
+        reg.addEventListener("updatefound", () => {
+          const newWorker = reg.installing;
+          newWorker.addEventListener("statechange", () => {
+            if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+              showUpdateBanner();
+            }
+          });
+        });
+      }).catch(() => {});
+
+      // If the SW swaps out underneath us (skipWaiting path), reload once.
       let reloaded = false;
       navigator.serviceWorker.addEventListener("controllerchange", () => {
         if (reloaded) return;
         reloaded = true;
         location.reload();
       });
+    }
+
+    function showUpdateBanner() {
+      const b = document.createElement("div");
+      b.id = "update-banner";
+      b.innerHTML = `<span>🆕 New version available</span><button onclick="location.reload()">Tap to update</button>`;
+      document.body.appendChild(b);
     }
   }
 
