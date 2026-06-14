@@ -110,15 +110,24 @@ async function main() {
     };
   }).filter(m => m.home && m.away);
 
+  // Read existing file to detect if match data actually changed.
+  let existing = { matches: [], lastSynced: null };
+  try { existing = JSON.parse(readFileSync(OUT, "utf8")); } catch {}
+  const existingSig = JSON.stringify(existing.matches);
+  const newSig = JSON.stringify(matches);
+  const scoresChanged = existingSig !== newSig;
+
+  const now = new Date().toISOString();
   const out = {
-    lastSynced: new Date().toISOString(),
+    lastChecked: now,
+    lastSynced: scoresChanged ? now : (existing.lastSynced || now),
     syncNote: `Auto-synced from football-data.org (${COMPETITION}).`,
     source: "football-data.org",
     matches,
   };
 
   writeFileSync(OUT, JSON.stringify(out, null, 2) + "\n");
-  console.log(`Wrote ${matches.length} matches to data/matches.json`);
+  console.log(`Wrote ${matches.length} matches. Scores changed: ${scoresChanged}`);
 }
 
 main().catch(err => { console.error(err); process.exit(1); });
