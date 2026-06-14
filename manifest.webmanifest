@@ -1,0 +1,14 @@
+{
+  "name": "Fantasy WC26",
+  "short_name": "WC26",
+  "description": "Live standings for our 2026 World Cup fantasy draft.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0e1a",
+  "theme_color": "#0a0e1a",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
