@@ -233,6 +233,7 @@ body {
    ===================================================================== */
 body.modal-open { overflow: hidden; }
 .modal { position: fixed; inset: 0; z-index: 50; display: flex; justify-content: center; align-items: flex-end; }
+.modal[hidden] { display: none; }
 .modal__backdrop { position: absolute; inset: 0; background: rgba(4,7,14,.7); backdrop-filter: blur(3px); animation: fade .2s ease; }
 .modal__sheet {
   position: relative; width: 100%; max-width: var(--maxw); max-height: 92vh;
