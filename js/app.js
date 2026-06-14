@@ -350,7 +350,10 @@
   }
 
   function renderSync() {
-    el("syncLine").innerHTML = `🔄 Last synced <b>${esc(timeAgo(remote.lastSynced))}</b> · auto-updates every 30 min`;
+    const synced = remote.lastSynced;
+    const checked = remote.lastChecked || synced;
+    const ago = timeAgo(checked);
+    el("syncLine").innerHTML = `🔄 Checked for results <b>${esc(ago)}</b>`;
     el("heroKicker").textContent = C.kicker;
     el("heroPlayers").textContent = C.players.map(p => p.name).join(" · ");
     el("heroDates").textContent = C.dates;
