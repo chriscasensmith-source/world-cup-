@@ -236,7 +236,7 @@ body.modal-open { overflow: hidden; }
 .modal[hidden] { display: none; }
 .modal__backdrop { position: absolute; inset: 0; background: rgba(4,7,14,.7); backdrop-filter: blur(3px); animation: fade .2s ease; }
 .modal__sheet {
-  position: relative; width: 100%; max-width: var(--maxw); max-height: 92vh;
+  position: relative; z-index: 1; width: 100%; max-width: var(--maxw); max-height: 92vh;
   background: var(--bg-2); border: 1px solid var(--line);
   border-radius: 20px 20px 0 0; display: flex; flex-direction: column;
   animation: sheetUp .26s cubic-bezier(.2,.8,.2,1);
@@ -252,7 +252,7 @@ body.modal-open { overflow: hidden; }
 }
 .modal__btn:hover { background: rgba(255,255,255,.05); }
 .modal__close { color: var(--muted); }
-.modal__content { overflow-y: auto; padding: 20px; -webkit-overflow-scrolling: touch; }
+.modal__content { overflow-y: auto; padding: 20px; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; touch-action: pan-y; }
 
 .detail__head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
 .detail__flag { font-size: 44px; line-height: 1; }
