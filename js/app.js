@@ -451,7 +451,13 @@
   let modalStack = [];
   function renderModal() {
     const m = el("modal");
-    if (!modalStack.length) { m.hidden = true; m.innerHTML = ""; document.body.classList.remove("modal-open"); return; }
+    if (!modalStack.length) {
+      m.hidden = true;
+      m.style.display = "none";           // inline guarantee: never trap taps when closed
+      m.innerHTML = "";
+      document.body.classList.remove("modal-open");
+      return;
+    }
     const top = modalStack[modalStack.length - 1];
     const inner = top.type === "player" ? playerDetailHTML(top.id) : teamDetailHTML(top.id);
     const back = modalStack.length > 1
@@ -464,6 +470,7 @@
         <div class="modal__content">${inner}</div>
       </div>`;
     m.hidden = false;
+    m.style.display = "flex";
     document.body.classList.add("modal-open");
   }
   function openPlayer(id) { modalStack.push({ type: "player", id }); renderModal(); }
