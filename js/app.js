@@ -118,14 +118,16 @@
   function chip(pid) {
     const p = PLAYER_BY_ID[pid];
     if (!p) return "";
-    return `<span class="chip" style="--c:${p.color}">${esc(p.name)}</span>`;
+    return `<span class="chip" data-player="${p.id}" style="--c:${p.color}">${esc(p.name)}</span>`;
   }
 
   function teamLine(teams) {
-    return teams.map(t => `${flag(t)}&nbsp;${esc(t)}`).join(", ");
+    return teams.map(t => `<span class="team-link" data-team="${esc(t)}">${flag(t)}&nbsp;${esc(t)}</span>`).join(", ");
   }
 
   const medals = ["🥇", "🥈", "🥉"];
+  const RANK_LABEL = { 1: "Group stage", 2: "Round of 32", 3: "Round of 16", 4: "Quarter-finals", 5: "Semi-finals", 6: "Final / Champion" };
+  const fmtDate = d => d ? new Date(d + "T12:00:00").toLocaleDateString(undefined, { month: "short", day: "numeric" }) : "";
 
   // ---- STANDINGS -------------------------------------------------------
   function renderStandings() {
@@ -133,10 +135,10 @@
     const html = rows.map((s, i) => {
       const rank = medals[i] || `<span class="rank__num">${i + 1}</span>`;
       return `
-      <div class="lb-card" style="--c:${s.color}">
+      <div class="lb-card clickable" data-player="${s.id}" style="--c:${s.color}">
         <div class="lb-rank">${rank}</div>
         <div class="lb-body">
-          <div class="lb-name">${esc(s.name)}</div>
+          <div class="lb-name">${esc(s.name)}<span class="lb-go">›</span></div>
           <div class="lb-teams">${teamLine(C.rosters[s.id])}</div>
         </div>
         <div class="lb-score">
@@ -177,7 +179,7 @@
         pw += s.w; pg += s.goals;
         const rec = s.played ? `<span class="dt-rec">${s.w}W · ⚽${s.goals}</span>` : `<span class="dt-rec dt-rec--none">—</span>`;
         const out = s.koOut ? `<span class="dt-out">OUT</span>` : "";
-        return `<li><span class="dt-flag">${flag(t)}</span> <span class="dt-name">${esc(t)}</span> ${rec}${out}</li>`;
+        return `<li class="team-link" data-team="${esc(t)}"><span class="dt-flag">${flag(t)}</span> <span class="dt-name">${esc(t)}</span> ${rec}${out}</li>`;
       }).join("");
       return `
       <div class="draft-card" style="--c:${p.color}">
@@ -262,13 +264,13 @@
     return `
     <div class="${cardClass}">
       <div class="match__scoreboard">
-        <div class="match__team match__team--home">
+        <div class="match__team match__team--home team-link" data-team="${esc(m.home)}">
           <span class="mt__flag">${flag(m.home)}</span>
           <span class="mt__name">${esc(m.home)}</span>
           <span class="mt__chip">${ownersFor(m.home)}</span>
         </div>
         <div class="match__center">${center}</div>
-        <div class="match__team match__team--away">
+        <div class="match__team match__team--away team-link" data-team="${esc(m.away)}">
           <span class="mt__flag">${flag(m.away)}</span>
           <span class="mt__name">${esc(m.away)}</span>
           <span class="mt__chip">${ownersFor(m.away)}</span>
@@ -326,6 +328,166 @@
       </div>`;
   }
 
+  // =====================================================================
+  //  DETAIL VIEWS (player & team breakdowns)
+  // =====================================================================
+  function teamRecord(team) {
+    team = canonical(team);
+    const ms = liveMatches()
+      .filter(m => m.home === team || m.away === team)
+      .sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+    let w = 0, d = 0, l = 0, gf = 0, ga = 0, best = 0, koOut = false;
+    const rows = ms.map(m => {
+      const home = m.home === team;
+      const opp = home ? m.away : m.home;
+      const hasScore = Number.isFinite(m.homeScore) && Number.isFinite(m.awayScore);
+      const tf = home ? m.homeScore : m.awayScore;
+      const ta = home ? m.awayScore : m.homeScore;
+      const rank = (C.stages[m.stage] || {}).rank || 1;
+      if (rank > best) best = rank;
+      let res = "";
+      if (hasScore) { gf += tf; ga += ta; }
+      if (m.status === "FINISHED") {
+        if (m.winner) {
+          if (canonical(m.winner) === team) { w++; res = "W"; }
+          else { l++; res = "L"; if (m.stage !== "GROUP") koOut = true; }
+        } else { d++; res = "D"; }
+      } else if (m.status === "IN_PLAY" || m.status === "PAUSED") {
+        res = "LIVE";
+      }
+      return { m, opp, hasScore, tf, ta, res };
+    });
+    return { team, rows, w, d, l, gf, ga, best, koOut, played: w + d + l };
+  }
+
+  function resultBadge(res) {
+    if (res === "W") return `<span class="rb rb--w">W</span>`;
+    if (res === "L") return `<span class="rb rb--l">L</span>`;
+    if (res === "D") return `<span class="rb rb--d">D</span>`;
+    if (res === "LIVE") return `<span class="rb rb--live">LIVE</span>`;
+    return "";
+  }
+
+  function teamDetailHTML(team) {
+    const r = teamRecord(team);
+    const owner = ownerId(team);
+    const status = r.koOut ? "Eliminated"
+      : r.best > 1 ? `Reached ${RANK_LABEL[r.best]}`
+      : r.played ? "In the group stage"
+      : "Yet to kick off";
+    const matchRows = r.rows.map(x => {
+      const { m, opp, hasScore, tf, ta, res } = x;
+      const score = hasScore ? `${tf}–${ta}` : "vs";
+      const stage = m.stage === "GROUP" ? `Group ${m.group || ""}` : (C.stages[m.stage] || {}).label || m.stage;
+      return `
+      <div class="dt-match">
+        <div class="dt-match__opp"><span class="team-link" data-team="${esc(opp)}">${flag(opp)} ${esc(opp)}</span> ${ownersFor(opp)}</div>
+        <div class="dt-match__score">${esc(score)} ${resultBadge(res)}</div>
+        <div class="dt-match__meta">${esc(stage)}${m.date ? " · " + esc(fmtDate(m.date)) : ""}</div>
+      </div>`;
+    }).join("");
+    return `
+    <div class="detail">
+      <div class="detail__head">
+        <div class="detail__flag">${flag(r.team)}</div>
+        <div>
+          <div class="detail__title">${esc(r.team)}</div>
+          <div class="detail__sub">${owner ? `Drafted by ${chip(owner)}` : "Not drafted"}</div>
+        </div>
+      </div>
+      <div class="detail__stats">
+        <div class="stat"><div class="stat__v">${r.w}</div><div class="stat__k">Wins</div></div>
+        <div class="stat"><div class="stat__v">${r.d}</div><div class="stat__k">Draws</div></div>
+        <div class="stat"><div class="stat__v">${r.l}</div><div class="stat__k">Losses</div></div>
+        <div class="stat"><div class="stat__v">${r.gf}</div><div class="stat__k">Goals for</div></div>
+        <div class="stat"><div class="stat__v">${r.ga}</div><div class="stat__k">Goals ag.</div></div>
+      </div>
+      <div class="detail__status ${r.koOut ? "is-out" : ""}">${esc(status)}</div>
+      <h4 class="detail__h">Matches</h4>
+      ${matchRows || `<p class="empty">No matches yet.</p>`}
+    </div>`;
+  }
+
+  function playerDetailHTML(pid) {
+    const standings = computeStandings();
+    const idx = standings.findIndex(s => s.id === pid);
+    const s = standings[idx];
+    const p = PLAYER_BY_ID[pid];
+    const recs = C.rosters[pid].map(teamRecord);
+    const alive = recs.filter(r => !r.koOut).length;
+    const rankBadge = medals[idx] || `#${idx + 1}`;
+    const teamRows = recs.map(r => {
+      const out = r.koOut ? `<span class="dt-out">OUT</span>` : "";
+      const rec = r.played
+        ? `${r.w}W-${r.d}D-${r.l}L · ⚽${r.gf}`
+        : `<span class="muted">not started</span>`;
+      return `
+      <div class="pd-team team-link" data-team="${esc(r.team)}">
+        <span class="pd-team__name">${flag(r.team)} ${esc(r.team)}</span>
+        <span class="pd-team__rec">${rec} ${out}<span class="pd-go">›</span></span>
+      </div>`;
+    }).join("");
+    return `
+    <div class="detail">
+      <div class="detail__head">
+        <div class="detail__rank" style="--c:${p.color}">${rankBadge}</div>
+        <div>
+          <div class="detail__title" style="color:${p.color}">${esc(p.name)}</div>
+          <div class="detail__sub">${s.wins} wins · ${s.goals} goals</div>
+        </div>
+      </div>
+      <div class="detail__stats">
+        <div class="stat"><div class="stat__v">${s.wins}</div><div class="stat__k">Wins</div></div>
+        <div class="stat"><div class="stat__v">${s.goals}</div><div class="stat__k">Goals</div></div>
+        <div class="stat"><div class="stat__v">${alive}/12</div><div class="stat__k">Alive</div></div>
+        <div class="stat"><div class="stat__v stat__v--sm">${esc(RANK_LABEL[s.deepest] || "—")}</div><div class="stat__k">Deepest run</div></div>
+      </div>
+      <h4 class="detail__h">Squad — tap a team for details</h4>
+      <div class="pd-teams">${teamRows}</div>
+    </div>`;
+  }
+
+  // ---- Modal (with drill-down stack: player ▸ team) --------------------
+  let modalStack = [];
+  function renderModal() {
+    const m = el("modal");
+    if (!modalStack.length) { m.hidden = true; m.innerHTML = ""; document.body.classList.remove("modal-open"); return; }
+    const top = modalStack[modalStack.length - 1];
+    const inner = top.type === "player" ? playerDetailHTML(top.id) : teamDetailHTML(top.id);
+    const back = modalStack.length > 1
+      ? `<button class="modal__btn" data-modal="back">‹ Back</button>`
+      : `<span></span>`;
+    m.innerHTML = `
+      <div class="modal__backdrop" data-modal="close"></div>
+      <div class="modal__sheet" role="dialog" aria-modal="true">
+        <div class="modal__bar">${back}<button class="modal__btn modal__close" data-modal="close">✕ Close</button></div>
+        <div class="modal__content">${inner}</div>
+      </div>`;
+    m.hidden = false;
+    document.body.classList.add("modal-open");
+  }
+  function openPlayer(id) { modalStack.push({ type: "player", id }); renderModal(); }
+  function openTeam(id) { modalStack.push({ type: "team", id: canonical(id) }); renderModal(); }
+
+  function initInteractions() {
+    document.addEventListener("click", e => {
+      const md = e.target.closest("[data-modal]");
+      if (md) {
+        if (md.dataset.modal === "close") modalStack = [];
+        else if (md.dataset.modal === "back") modalStack.pop();
+        renderModal();
+        return;
+      }
+      const hit = e.target.closest("[data-team],[data-player]");
+      if (!hit) return;
+      if (hit.dataset.team !== undefined) openTeam(hit.dataset.team);
+      else if (hit.dataset.player !== undefined) openPlayer(hit.dataset.player);
+    });
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape" && modalStack.length) { modalStack.pop(); renderModal(); }
+    });
+  }
+
   // ---- Tabs ------------------------------------------------------------
   function initTabs() {
     document.querySelectorAll(".tab").forEach(btn => {
@@ -365,6 +527,7 @@
     renderDraft();
     renderTracker();
     renderRules();
+    if (modalStack.length) renderModal();   // keep an open breakdown current
   }
 
   // ---- Live refresh ----------------------------------------------------
@@ -389,6 +552,7 @@
   // ---- Boot ------------------------------------------------------------
   async function boot() {
     initTabs();
+    initInteractions();
     renderAll();
     await refreshResults(false);
 
@@ -399,6 +563,13 @@
 
     if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
       navigator.serviceWorker.register("sw.js").catch(() => {});
+      // Auto-reload once when a new version takes over, so code is never stale.
+      let reloaded = false;
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (reloaded) return;
+        reloaded = true;
+        location.reload();
+      });
     }
   }
 
