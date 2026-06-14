@@ -516,7 +516,9 @@
     const synced = remote.lastSynced;
     const checked = remote.lastChecked || synced;
     const ago = timeAgo(checked);
-    el("syncLine").innerHTML = `🔄 Checked for results <b>${esc(ago)}</b>`;
+    // Only update the text span — never the whole line, or we'd wipe the ↺ button.
+    const t = el("syncText") || el("syncLine");
+    t.innerHTML = `🔄 Checked for results <b>${esc(ago)}</b>`;
     el("heroKicker").textContent = C.kicker;
     el("heroPlayers").textContent = C.players.map(p => p.name).join(" · ");
     el("heroDates").textContent = C.dates;
