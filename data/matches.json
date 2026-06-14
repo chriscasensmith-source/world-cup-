@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-14T21:50:14.033Z",
-  "lastSynced": "2026-06-14T21:50:14.033Z",
+  "lastChecked": "2026-06-14T22:25:08.294Z",
+  "lastSynced": "2026-06-14T22:25:08.294Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -120,9 +120,9 @@
       "home": "Netherlands",
       "away": "Japan",
       "homeScore": 2,
-      "awayScore": 1,
-      "status": "IN_PLAY",
-      "winner": "Netherlands"
+      "awayScore": 2,
+      "status": "FINISHED",
+      "winner": null
     },
     {
       "id": "fd-537352",
