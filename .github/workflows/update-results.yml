@@ -1,0 +1,42 @@
+name: Update World Cup results
+
+# Auto-fetches live results into data/matches.json and commits any changes.
+# Add a free token as repo secret FOOTBALL_DATA_API_TOKEN to enable.
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # every 30 minutes (UTC)
+  workflow_dispatch:          # lets you run it manually from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-results
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch results
+        env:
+          FOOTBALL_DATA_API_TOKEN: ${{ secrets.FOOTBALL_DATA_API_TOKEN }}
+        run: node scripts/fetch-results.mjs
+
+      - name: Commit if changed
+        run: |
+          git config user.name "wc26-bot"
+          git config user.email "actions@github.com"
+          if ! git diff --quiet -- data/matches.json; then
+            git add data/matches.json
+            git commit -m "chore: sync World Cup results"
+            git push
+          else
+            echo "No changes to commit."
+          fi

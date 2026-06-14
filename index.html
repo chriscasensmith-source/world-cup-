@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0e1a" />
+  <title>Fantasy WC26 — World Cup Draft Tracker</title>
+  <meta name="description" content="Live standings for our 2026 FIFA World Cup fantasy draft." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="hero">
+      <p class="hero__kicker" id="heroKicker">2026 FIFA World Cup · USA / Canada / Mexico</p>
+      <h1 class="hero__title">FANTASY <span>WC26</span></h1>
+      <p class="hero__meta">
+        <span id="heroPlayers">Chris · Jarrett · Justin · Ryan</span>
+        <span class="hero__sep">|</span>
+        <span id="heroDates">June 11 – July 19, 2026</span>
+      </p>
+      <p class="hero__sync" id="syncLine">🔄 Loading results…</p>
+    </header>
+
+    <!-- Tabs -->
+    <nav class="tabs" role="tablist">
+      <button class="tab is-active" data-tab="standings" role="tab"><span class="tab__icon">🏆</span><span>STANDINGS</span></button>
+      <button class="tab" data-tab="draft" role="tab"><span class="tab__icon">📋</span><span>DRAFT</span></button>
+      <button class="tab" data-tab="tracker" role="tab"><span class="tab__icon">⚽</span><span>WIN TRACKER</span></button>
+      <button class="tab" data-tab="rules" role="tab"><span class="tab__icon">📖</span><span>RULES</span></button>
+    </nav>
+
+    <main class="content">
+      <section class="panel is-active" id="panel-standings" role="tabpanel"></section>
+      <section class="panel" id="panel-draft" role="tabpanel"></section>
+      <section class="panel" id="panel-tracker" role="tabpanel"></section>
+      <section class="panel" id="panel-rules" role="tabpanel"></section>
+    </main>
+
+    <footer class="footer">
+      <div class="note" id="footerNote">
+        📌 Results auto-sync from the live World Cup. You can also log or correct any score below — your edits are saved on this device.
+      </div>
+      <div class="footer__tools">
+        <button class="btn btn--ghost" id="exportBtn">⬇️ Export data</button>
+        <button class="btn btn--ghost" id="importBtn">⬆️ Import data</button>
+        <button class="btn btn--ghost" id="resetBtn">↩️ Clear my edits</button>
+        <input type="file" id="importFile" accept="application/json" hidden />
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

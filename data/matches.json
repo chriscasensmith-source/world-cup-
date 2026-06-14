@@ -1,0 +1,13 @@
+{
+  "lastSynced": "2026-06-13T22:00:00Z",
+  "syncNote": "Seed data — Group A only. Connect the live feed (see README) to auto-fill every match.",
+  "source": "seed",
+  "matches": [
+    { "id": "A-mex-rsa", "stage": "GROUP", "group": "A", "date": "2026-06-11", "home": "Mexico",       "away": "South Africa", "homeScore": 2,    "awayScore": 0,    "status": "FINISHED",  "winner": "Mexico" },
+    { "id": "A-rsa-kor", "stage": "GROUP", "group": "A", "date": "2026-06-13", "home": "South Africa", "away": "South Korea",  "homeScore": 1,    "awayScore": 2,    "status": "FINISHED",  "winner": "South Korea" },
+    { "id": "A-mex-kor", "stage": "GROUP", "group": "A", "date": "2026-06-17", "home": "Mexico",       "away": "South Korea",  "homeScore": null, "awayScore": null, "status": "SCHEDULED", "winner": null },
+    { "id": "A-rsa-cze", "stage": "GROUP", "group": "A", "date": "2026-06-17", "home": "South Africa", "away": "Czechia",      "homeScore": null, "awayScore": null, "status": "SCHEDULED", "winner": null },
+    { "id": "A-mex-cze", "stage": "GROUP", "group": "A", "date": "2026-06-23", "home": "Mexico",       "away": "Czechia",      "homeScore": null, "awayScore": null, "status": "SCHEDULED", "winner": null },
+    { "id": "A-kor-cze", "stage": "GROUP", "group": "A", "date": "2026-06-23", "home": "South Korea",  "away": "Czechia",      "homeScore": null, "awayScore": null, "status": "SCHEDULED", "winner": null }
+  ]
+}
