@@ -460,7 +460,7 @@
     m.innerHTML = `
       <div class="modal__backdrop" data-modal="close"></div>
       <div class="modal__sheet" role="dialog" aria-modal="true">
-        <div class="modal__bar">${back}<button class="modal__btn modal__close" data-modal="close">✕ Close</button></div>
+        <div class="modal__bar">${back}<button class="modal__btn modal__close" data-modal="close">🏠 Home</button></div>
         <div class="modal__content">${inner}</div>
       </div>`;
     m.hidden = false;
