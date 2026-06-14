@@ -24,6 +24,17 @@ Wins follow the house rules: group-stage and knockout wins each count as 1;
 draws don't count; in knockouts the **advancing team** gets the win (including
 penalty-shootout wins).
 
+## Extras
+- **Live refresh** — an open tab re-checks for new results every minute and when
+  you switch back to it, so scores update without reloading.
+- **Install to home screen / offline** — it's a PWA (manifest + service worker),
+  so you can add it to your phone's home screen and it still loads at the bar
+  with no signal (results refresh when you're back online).
+- **Per-team records** — the Draft tab shows each team's wins/goals and an
+  **OUT** badge once a team loses a knockout match.
+- **Champion banner** — when the Final is decided, the winning team and its owner
+  are celebrated at the top of Standings.
+
 ## One-time setup
 
 ### 1. Turn on the live feed (optional but recommended)

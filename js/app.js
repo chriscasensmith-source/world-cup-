@@ -96,6 +96,38 @@
     return b - a;
   }
 
+  // ---- Per-team records (used by Draft tab + champion banner) ----------
+  function teamStats() {
+    const t = {};
+    const ensure = name => (t[name] = t[name] || { w: 0, d: 0, l: 0, goals: 0, played: 0, koOut: false, bestStage: 0 });
+    for (const m of liveMatches()) {
+      const hasScore = Number.isFinite(m.homeScore) && Number.isFinite(m.awayScore);
+      [["home", "homeScore"], ["away", "awayScore"]].forEach(([side, scoreKey]) => {
+        const team = m[side];
+        if (!ownerId(team)) return;
+        const s = ensure(team);
+        const rank = (C.stages[m.stage] || {}).rank || 1;
+        if (rank > s.bestStage) s.bestStage = rank;
+        if (!hasScore) return;
+        s.goals += m[scoreKey];
+        if (m.status !== "FINISHED") return;
+        s.played += 1;
+        const w = m.winner && canonical(m.winner);
+        if (w === team) s.w += 1;
+        else if (w) { s.l += 1; if (m.stage !== "GROUP") s.koOut = true; }
+        else s.d += 1;
+      });
+    }
+    return t;
+  }
+
+  function champion() {
+    const fin = liveMatches().find(m => m.stage === "FINAL" && m.status === "FINISHED" && m.winner);
+    if (!fin) return null;
+    const team = canonical(fin.winner);
+    return { team, owner: ownerId(team) };
+  }
+
   // =====================================================================
   //  RENDERERS
   // =====================================================================
@@ -134,20 +166,37 @@
       </div>`;
     }).join("");
 
+    const champ = champion();
+    const banner = champ ? `
+      <div class="champ-banner">
+        <div class="champ-banner__cup">🏆</div>
+        <div>
+          <div class="champ-banner__title">${flag(champ.team)} ${esc(champ.team)} are World Champions!</div>
+          ${champ.owner ? `<div class="champ-banner__owner">Drafted by ${chip(champ.owner)}</div>` : ""}
+        </div>
+      </div>` : "";
+
     el("panel-standings").innerHTML = `
+      ${banner}
       <h2 class="section-title">Leaderboard</h2>
       <div class="lb-list">${html}</div>`;
   }
 
   // ---- DRAFT -----------------------------------------------------------
   function renderDraft() {
+    const ts = teamStats();
     const cards = C.players.map(p => {
-      const teams = C.rosters[p.id].map(t =>
-        `<li><span class="dt-flag">${flag(t)}</span> ${esc(t)} <span class="dt-owner" style="--c:${p.color}"></span></li>`
-      ).join("");
+      let pw = 0, pg = 0;
+      const teams = C.rosters[p.id].map(t => {
+        const s = ts[t] || { w: 0, goals: 0, koOut: false, played: 0 };
+        pw += s.w; pg += s.goals;
+        const rec = s.played ? `<span class="dt-rec">${s.w}W · ⚽${s.goals}</span>` : `<span class="dt-rec dt-rec--none">—</span>`;
+        const out = s.koOut ? `<span class="dt-out">OUT</span>` : "";
+        return `<li><span class="dt-flag">${flag(t)}</span> <span class="dt-name">${esc(t)}</span> ${rec}${out}</li>`;
+      }).join("");
       return `
       <div class="draft-card" style="--c:${p.color}">
-        <div class="draft-card__head"><h3>${esc(p.name)}</h3><span class="draft-card__count">${C.rosters[p.id].length} teams</span></div>
+        <div class="draft-card__head"><h3>${esc(p.name)}</h3><span class="draft-card__count">${pw}W · ⚽${pg}</span></div>
         <ul class="draft-card__teams">${teams}</ul>
       </div>`;
     }).join("");
@@ -434,15 +483,42 @@
     renderRules();
   }
 
+  // ---- Live refresh: re-fetch results without a manual reload ----------
+  let lastFetchSig = "";
+  async function refreshResults(flash) {
+    try {
+      const res = await fetch("data/matches.json", { cache: "no-store" });
+      if (!res.ok) return;
+      const data = await res.json();
+      const sig = JSON.stringify(data.matches) + (data.lastSynced || "");
+      if (sig === lastFetchSig) return;   // nothing changed
+      lastFetchSig = sig;
+      remote = data;
+      renderAll();
+      if (flash) {
+        const line = el("syncLine");
+        if (line) { line.classList.add("is-flash"); setTimeout(() => line.classList.remove("is-flash"), 1200); }
+      }
+    } catch { /* offline / file:// — keep showing what we have */ }
+  }
+
   // ---- Boot ------------------------------------------------------------
   async function boot() {
     initTabs();
     renderAll();          // render immediately with whatever we have
     initTools();
-    try {
-      const res = await fetch("data/matches.json", { cache: "no-store" });
-      if (res.ok) { remote = await res.json(); renderAll(); }
-    } catch { /* offline / file:// — seed view still works */ }
+    await refreshResults(false);
+
+    // Keep an open tab current: poll periodically + on refocus.
+    setInterval(() => refreshResults(true), 60 * 1000);
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") refreshResults(true);
+    });
+
+    // Offline / installable support.
+    if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+      navigator.serviceWorker.register("sw.js").catch(() => {});
+    }
   }
 
   document.addEventListener("DOMContentLoaded", boot);

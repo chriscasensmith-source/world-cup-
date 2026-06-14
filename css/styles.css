@@ -79,6 +79,22 @@ body {
   color: var(--muted); border-bottom: 1px solid var(--line); padding-bottom: 12px; margin: 4px 0 18px;
 }
 
+.hero__sync.is-flash { animation: flashSync 1.2s ease; }
+@keyframes flashSync {
+  0%, 100% { background: rgba(245,179,1,.08); }
+  30% { background: rgba(34,201,147,.22); border-color: var(--green); }
+}
+
+/* ---- Champion banner ---- */
+.champ-banner {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 20px;
+  background: linear-gradient(135deg, rgba(245,179,1,.18), rgba(245,179,1,.05));
+  border: 1px solid rgba(245,179,1,.4); border-radius: var(--radius); padding: 18px 20px;
+}
+.champ-banner__cup { font-size: 40px; }
+.champ-banner__title { font-size: 19px; font-weight: 800; }
+.champ-banner__owner { color: var(--muted); font-size: 14px; margin-top: 6px; }
+
 /* ---- Leaderboard ---- */
 .lb-list { display: flex; flex-direction: column; gap: 14px; }
 .lb-card {
@@ -113,8 +129,16 @@ body {
 .draft-card__head h3 { margin: 0; font-size: 19px; font-weight: 800; }
 .draft-card__count { font-size: 12px; color: var(--muted); font-weight: 600; }
 .draft-card__teams { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
-.draft-card__teams li { font-size: 14px; color: var(--text); }
-.dt-flag { margin-right: 4px; }
+.draft-card__teams li { font-size: 14px; color: var(--text); display: flex; align-items: center; gap: 6px; }
+.dt-flag { flex: none; }
+.dt-name { flex: 1 1 auto; min-width: 0; }
+.dt-rec { flex: none; font-size: 12px; font-weight: 700; color: var(--gold-soft); }
+.dt-rec--none { color: var(--muted); font-weight: 500; }
+.dt-out {
+  flex: none; font-size: 9px; font-weight: 800; letter-spacing: .08em;
+  background: rgba(255,77,109,.18); color: var(--red); border: 1px solid rgba(255,77,109,.4);
+  border-radius: 5px; padding: 1px 5px;
+}
 
 /* ---- Win tracker ---- */
 .trk-help { color: var(--muted); font-size: 13px; margin: -8px 0 20px; }
