@@ -52,6 +52,12 @@ body {
   border: 1px solid rgba(245,179,1,.22); border-radius: 12px; padding: 10px 14px;
 }
 .hero__sync.is-flash { animation: flashSync 1.2s ease; }
+.sync-refresh {
+  background: none; border: none; color: inherit; font-size: 16px; font-weight: 900;
+  cursor: pointer; padding: 0 4px; vertical-align: middle; opacity: .7;
+  font-family: inherit; line-height: 1;
+}
+.sync-refresh:hover { opacity: 1; }
 @keyframes flashSync {
   0%, 100% { background: rgba(245,179,1,.08); }
   30% { background: rgba(34,201,147,.22); border-color: var(--green); }
@@ -213,6 +219,18 @@ body {
 .rule-card ol { margin: 0; padding-left: 20px; color: var(--text); }
 .rule-card li { margin-bottom: 8px; }
 .rule-card b { color: var(--text); }
+
+/* ---- Update banner ---- */
+#update-banner {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  background: var(--green); color: #04130d;
+  padding: 14px 20px; font-weight: 800; font-size: 15px;
+}
+#update-banner button {
+  background: rgba(0,0,0,.18); border: 0; color: inherit; font: inherit;
+  font-weight: 900; border-radius: 8px; padding: 6px 14px; cursor: pointer;
+}
 
 /* ---- Footer ---- */
 .footer { margin-top: 36px; }
