@@ -161,6 +161,10 @@
       ${banner}
       <h2 class="section-title">Leaderboard</h2>
       <div class="lb-list">${html}</div>`;
+
+    // Highlight current leader card
+    const cards = el("panel-standings").querySelectorAll(".lb-card");
+    if (cards.length) cards[0].classList.add("is-leader");
   }
 
   // ---- DRAFT -----------------------------------------------------------
@@ -228,28 +232,47 @@
   }
 
   function matchRow(m) {
-    const hs = Number.isFinite(m.homeScore) ? m.homeScore : "–";
-    const as = Number.isFinite(m.awayScore) ? m.awayScore : "–";
+    const isLive = m.status === "IN_PLAY" || m.status === "PAUSED";
+    const hasScore = Number.isFinite(m.homeScore) && Number.isFinite(m.awayScore);
+    const hs = hasScore ? m.homeScore : "–";
+    const as = hasScore ? m.awayScore : "–";
     const res = resultOf(m);
-    const liveTag = m.status === "IN_PLAY" || m.status === "PAUSED"
-      ? `<span class="tag tag--live">LIVE</span>` : "";
 
-    // Result badge shown after a finished match
-    let badge = "";
-    if (res === "W") badge = `<span class="result-badge result-badge--w">${esc(m.home)} win</span>`;
-    else if (res === "L") badge = `<span class="result-badge result-badge--l">${esc(m.away)} win</span>`;
-    else if (res === "D") badge = `<span class="result-badge result-badge--d">Draw</span>`;
+    let cardClass = "match";
+    if (isLive) cardClass += " is-live";
+    else if (res === "W") cardClass += " is-home-win";
+    else if (res === "L") cardClass += " is-away-win";
+    else if (res === "D") cardClass += " is-draw";
+    else cardClass += " is-scheduled";
+
+    let center = "";
+    if (isLive) {
+      center = `<div class="match__score-display">${hs} – ${as}</div><span class="tag--live">LIVE</span>`;
+    } else if (hasScore) {
+      let badge = "";
+      if (res === "W") badge = `<span class="result-badge result-badge--w">${esc(m.home)} win</span>`;
+      else if (res === "L") badge = `<span class="result-badge result-badge--l">${esc(m.away)} win</span>`;
+      else if (res === "D") badge = `<span class="result-badge result-badge--d">Draw</span>`;
+      center = `<div class="match__score-display">${hs} – ${as}</div>${badge}`;
+    } else {
+      const d = m.date ? new Date(m.date + "T12:00:00").toLocaleDateString(undefined, { month: "short", day: "numeric" }) : "";
+      center = `<div class="match__score-display is-pending">vs</div>${d ? `<div class="match__date">${esc(d)}</div>` : ""}`;
+    }
 
     return `
-    <div class="match">
-      <div class="match__teams">
-        <div class="mt"><span class="mt__flag">${flag(m.home)}</span><span class="mt__name">${esc(m.home)}</span> ${ownersFor(m.home)}</div>
-        <div class="mt__vs">vs ${liveTag}</div>
-        <div class="mt"><span class="mt__flag">${flag(m.away)}</span><span class="mt__name">${esc(m.away)}</span> ${ownersFor(m.away)}</div>
-      </div>
-      <div class="match__right">
-        <div class="match__score-display">${hs} – ${as}</div>
-        ${badge}
+    <div class="${cardClass}">
+      <div class="match__scoreboard">
+        <div class="match__team match__team--home">
+          <span class="mt__flag">${flag(m.home)}</span>
+          <span class="mt__name">${esc(m.home)}</span>
+          <span class="mt__chip">${ownersFor(m.home)}</span>
+        </div>
+        <div class="match__center">${center}</div>
+        <div class="match__team match__team--away">
+          <span class="mt__flag">${flag(m.away)}</span>
+          <span class="mt__name">${esc(m.away)}</span>
+          <span class="mt__chip">${ownersFor(m.away)}</span>
+        </div>
       </div>
     </div>`;
   }
@@ -317,11 +340,17 @@
   }
 
   // ---- Sync line -------------------------------------------------------
+  function timeAgo(iso) {
+    if (!iso) return "—";
+    const mins = Math.round((Date.now() - new Date(iso).getTime()) / 60000);
+    if (mins < 1) return "just now";
+    if (mins < 60) return `${mins} min ago`;
+    const hrs = Math.round(mins / 60);
+    return hrs === 1 ? "1 hour ago" : `${hrs} hours ago`;
+  }
+
   function renderSync() {
-    const when = remote.lastSynced
-      ? new Date(remote.lastSynced).toLocaleDateString(undefined, { month: "long", day: "numeric", year: "numeric", hour: "2-digit", minute: "2-digit" })
-      : "—";
-    el("syncLine").innerHTML = `🔄 Results last synced: <b>${esc(when)}</b>`;
+    el("syncLine").innerHTML = `🔄 Last synced <b>${esc(timeAgo(remote.lastSynced))}</b> · auto-updates every 30 min`;
     el("heroKicker").textContent = C.kicker;
     el("heroPlayers").textContent = C.players.map(p => p.name).join(" · ");
     el("heroDates").textContent = C.dates;

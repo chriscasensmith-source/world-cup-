@@ -47,7 +47,7 @@ window.CONFIG = {
     "Côte d'Ivoire":"Ivory Coast","Cote d'Ivoire":"Ivory Coast","Ivory Coast":"Ivory Coast",
     "Bosnia and Herzegovina":"Bosnia & Herzegovina","Bosnia & Herzegovina":"Bosnia & Herzegovina","Bosnia-Herzegovina":"Bosnia & Herzegovina",
     "DR Congo":"DR Congo","Congo DR":"DR Congo","Democratic Republic of the Congo":"DR Congo","Congo Democratic Republic":"DR Congo",
-    "Cabo Verde":"Cape Verde","Cape Verde":"Cape Verde",
+    "Cabo Verde":"Cape Verde","Cape Verde":"Cape Verde","Cape Verde Islands":"Cape Verde",
     "Curaçao":"Curaçao","Curacao":"Curaçao",
     "Saudi Arabia":"Saudi Arabia","KSA":"Saudi Arabia",
     "Netherlands":"Netherlands","Holland":"Netherlands",
