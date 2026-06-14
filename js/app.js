@@ -564,51 +564,26 @@
       if (document.visibilityState === "visible") refreshResults(true);
     });
 
-    document.getElementById("hardReloadBtn")?.addEventListener("click", hardReload);
+    document.getElementById("hardReloadBtn")?.addEventListener("click", () => location.reload());
 
     if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
       navigator.serviceWorker.register("sw.js").then(reg => {
-        // iOS PWA won't detect a new SW unless we call update() proactively.
+        // iOS won't detect a new SW unless we ask — check on focus + every 5 min.
         const checkUpdate = () => reg.update().catch(() => {});
         document.addEventListener("visibilitychange", () => {
           if (document.visibilityState === "visible") checkUpdate();
         });
         setInterval(checkUpdate, 5 * 60 * 1000);
-
-        reg.addEventListener("updatefound", () => {
-          const newWorker = reg.installing;
-          newWorker.addEventListener("statechange", () => {
-            if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
-              showUpdateBanner();
-            }
-          });
-        });
       }).catch(() => {});
 
-      // New SW activates and sends RELOAD → hard-reload to pick up fresh code.
-      navigator.serviceWorker.addEventListener("message", e => {
-        if (e.data?.type === "RELOAD") hardReload();
+      // When a newly-installed SW takes control, new code shipped — reload ONCE
+      // to apply it. Guarded so it can never loop. No unregister, no postMessage.
+      let reloaded = false;
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (reloaded) return;
+        reloaded = true;
+        location.reload();
       });
-    }
-
-    async function hardReload() {
-      // Unregister SW and wipe all caches so the reload fetches everything fresh.
-      try {
-        const regs = await navigator.serviceWorker.getRegistrations();
-        await Promise.all(regs.map(r => r.unregister()));
-        const keys = await caches.keys();
-        await Promise.all(keys.map(k => caches.delete(k)));
-      } catch (_) {}
-      location.reload();
-    }
-
-    function showUpdateBanner() {
-      if (document.getElementById("update-banner")) return;
-      const b = document.createElement("div");
-      b.id = "update-banner";
-      b.innerHTML = `<span>🆕 New version available</span><button id="update-btn">Tap to update</button>`;
-      document.body.appendChild(b);
-      document.getElementById("update-btn").addEventListener("click", hardReload);
     }
   }
 

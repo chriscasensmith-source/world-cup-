@@ -1,20 +1,19 @@
-/* Service worker — offline fallback only. Never pre-caches, never serves
-   cached content while online. This prevents stale code from getting stuck. */
-const CACHE = "wc26-v10";
+/* Service worker — network-first so code & results are always fresh, with
+   cache as an offline fallback only. Never pre-caches, never messages clients
+   (an earlier RELOAD postMessage caused an infinite reload loop). */
+const CACHE = "wc26-v11";
 
 self.addEventListener("install", e => {
-  // Skip waiting immediately — no pre-caching that could block or go stale.
+  // Activate immediately; nothing to pre-cache.
   e.waitUntil(self.skipWaiting());
 });
 
 self.addEventListener("activate", e => {
-  // Wipe every old cache and take control of all open tabs instantly.
+  // Drop every old cache, then take control of open pages.
   e.waitUntil(
     caches.keys()
       .then(keys => Promise.all(keys.map(k => caches.delete(k))))
       .then(() => self.clients.claim())
-      .then(() => self.clients.matchAll())
-      .then(clients => clients.forEach(c => c.postMessage({ type: "RELOAD" })))
   );
 });
 
@@ -22,7 +21,7 @@ self.addEventListener("fetch", e => {
   const req = e.request;
   if (req.method !== "GET") return;
 
-  // Always go to the network. Only fall back to cache when offline.
+  // Always try the network first; fall back to cache only when offline.
   e.respondWith(
     fetch(req)
       .then(res => {
