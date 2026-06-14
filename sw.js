@@ -1,6 +1,6 @@
 /* Service worker — network-first so code & results are always fresh,
    with cache as an offline fallback. Bump CACHE on any shipped change. */
-const CACHE = "wc26-v6";
+const CACHE = "wc26-v7";
 const SHELL = [
   ".",
   "index.html",
