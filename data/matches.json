@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-14T16:54:20.221Z",
-  "lastSynced": "2026-06-14T15:14:09.528Z",
+  "lastChecked": "2026-06-14T18:09:49.693Z",
+  "lastSynced": "2026-06-14T18:09:49.693Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -107,10 +107,10 @@
       "date": "2026-06-14",
       "home": "Germany",
       "away": "Curaçao",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
+      "homeScore": 3,
+      "awayScore": 1,
+      "status": "PAUSED",
+      "winner": "Germany"
     },
     {
       "id": "fd-537357",
