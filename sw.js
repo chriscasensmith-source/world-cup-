@@ -1,6 +1,6 @@
 /* Service worker: offline app shell + always-fresh results.
    Bump CACHE when you change app files. */
-const CACHE = "wc26-v1";
+const CACHE = "wc26-v2";
 const SHELL = [
   ".",
   "index.html",
