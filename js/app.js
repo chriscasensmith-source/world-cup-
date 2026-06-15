@@ -612,17 +612,31 @@
       }
 
       if (!matches) {
-        // Fallback: committed data/matches.json (updated by the GitHub Action poller).
-        const res = await fetch("data/matches.json?_=" + Date.now(), { cache: "no-store" });
-        if (!res.ok) return;
-        const data = await res.json();
-        matches = data.matches;
-        checkedAt = data.lastChecked || checkedAt;
+        // Read the data committed by the poller. Prefer the raw GitHub URL
+        // (always the latest commit, ~1 min fresh) over the Pages copy, which
+        // only rebuilds ~10x/hour and lags badly. Fall back to the local copy.
+        const urls = [];
+        if (C.dataUrl) urls.push(C.dataUrl + "?t=" + Date.now());
+        urls.push("data/matches.json?t=" + Date.now());
+        for (const u of urls) {
+          try {
+            const res = await fetch(u, { cache: "no-store" });
+            if (!res.ok) continue;
+            const data = await res.json();
+            if (Array.isArray(data.matches) && data.matches.length) {
+              matches = data.matches;
+              break;
+            }
+          } catch { /* try next url */ }
+        }
+        if (!matches) return;
       }
 
       const sig = JSON.stringify(matches);
       if (sig === lastFetchSig) return;
       lastFetchSig = sig;
+      // Show when the browser last pulled fresh data, not the file's timestamp —
+      // the data is current as of now regardless of when scores last changed.
       remote = { matches, lastChecked: checkedAt, lastSynced: checkedAt };
       renderAll();
       if (flash) {

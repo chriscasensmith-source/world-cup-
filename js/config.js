@@ -13,6 +13,11 @@ window.CONFIG = {
   apiBase: "",
   apiToken: "1bd33a67a606424a9d9bc76eb1062f9f",
 
+  // Read results straight from the latest commit (bypasses GitHub Pages, which
+  // only rebuilds ~10x/hour and would serve stale data). raw.githubusercontent
+  // updates within ~1 min of each poller commit and allows cross-origin reads.
+  dataUrl: "https://raw.githubusercontent.com/chriscasensmith-source/world-cup-/main/data/matches.json",
+
   kicker: "2026 FIFA World Cup · USA / Canada / Mexico",
   title: "Fantasy WC26",
   dates: "June 11 – July 19, 2026",
