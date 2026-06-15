@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-15T23:25:46.902Z",
-  "lastSynced": "2026-06-15T23:25:46.902Z",
+  "lastChecked": "2026-06-15T23:53:00.811Z",
+  "lastSynced": "2026-06-15T23:53:00.811Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -180,9 +180,9 @@
       "home": "Saudi Arabia",
       "away": "Uruguay",
       "homeScore": 1,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "IN_PLAY",
-      "winner": "Saudi Arabia"
+      "winner": null
     },
     {
       "id": "fd-537364",
