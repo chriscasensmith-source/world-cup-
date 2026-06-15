@@ -1,17 +1,19 @@
 name: Update World Cup results
 
-# Auto-fetches live results into data/matches.json and commits any changes.
-# Add a free token as repo secret FOOTBALL_DATA_API_TOKEN to enable.
+# Continuously polls football-data.org and commits any score changes to
+# data/matches.json. Instead of relying on GitHub's unreliable schedule (which
+# can lag 1-2 hours), each run loops internally — polling every ~90 seconds for
+# ~5.5 hours — so results stay fresh to within a couple of minutes. The schedule
+# just restarts the poller if it ever stops. Free on public repos.
 on:
   schedule:
-    # GitHub throttles scheduled runs under load, so request frequently
-    # (every 5 min) to maximize the odds a run fires close to schedule.
-    - cron: "*/5 * * * *"
-  workflow_dispatch:          # lets you run it manually from the Actions tab
+    - cron: "0 */4 * * *"      # safety net: restart the poller if it isn't running
+  workflow_dispatch:           # run manually from the Actions tab
 
 permissions:
   contents: write
 
+# Only one poller at a time; never cancel a running one.
 concurrency:
   group: update-results
   cancel-in-progress: false
@@ -19,6 +21,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 340       # ~5.7h, safely under the 6h hard limit
     steps:
       - uses: actions/checkout@v4
 
@@ -26,19 +29,22 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Fetch results
+      - name: Poll and commit results every ~90s
         env:
           FOOTBALL_DATA_API_TOKEN: ${{ secrets.FOOTBALL_DATA_API_TOKEN }}
-        run: node scripts/fetch-results.mjs
-
-      - name: Commit results
         run: |
           git config user.name "wc26-bot"
           git config user.email "actions@github.com"
-          git add data/matches.json
-          if ! git diff --cached --quiet; then
-            git commit -m "chore: sync World Cup results"
-            git push
-          else
-            echo "No changes to commit."
-          fi
+          # Stop ~20 min before the job timeout so the loop exits cleanly.
+          end=$(( $(date +%s) + 19200 ))   # 5h20m of polling
+          while [ "$(date +%s)" -lt "$end" ]; do
+            node scripts/fetch-results.mjs || true
+            git add data/matches.json
+            if ! git diff --cached --quiet; then
+              git commit -m "chore: sync World Cup results"
+              # Re-sync in case main moved (e.g. a code push) before pushing.
+              git pull --rebase --autostash origin main || true
+              git push || echo "push failed, will retry next loop"
+            fi
+            sleep 90
+          done
