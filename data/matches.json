@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-15T05:09:50.432Z",
-  "lastSynced": "2026-06-15T05:08:18.344Z",
+  "lastChecked": "2026-06-15T05:11:22.380Z",
+  "lastSynced": "2026-06-15T05:11:22.380Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -35,8 +35,8 @@
       "date": "2026-06-12",
       "home": "Canada",
       "away": "Bosnia & Herzegovina",
-      "homeScore": 1,
-      "awayScore": 1,
+      "homeScore": null,
+      "awayScore": null,
       "status": "FINISHED",
       "winner": null
     },
@@ -133,7 +133,7 @@
       "away": "Ecuador",
       "homeScore": 1,
       "awayScore": 0,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "winner": "Ivory Coast"
     },
     {
