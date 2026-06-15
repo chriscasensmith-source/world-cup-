@@ -117,17 +117,25 @@ async function main() {
   const newSig = JSON.stringify(matches);
   const scoresChanged = existingSig !== newSig;
 
+  // Only rewrite the file when match data actually changes. Writing on every
+  // poll (just to bump a timestamp) would commit every ~90s and blow past
+  // GitHub Pages' build rate limit, freezing the published site.
+  if (!scoresChanged && existing.matches?.length) {
+    console.log("No score changes — leaving file unchanged.");
+    return;
+  }
+
   const now = new Date().toISOString();
   const out = {
     lastChecked: now,
-    lastSynced: scoresChanged ? now : (existing.lastSynced || now),
+    lastSynced: now,
     syncNote: `Auto-synced from football-data.org (${COMPETITION}).`,
     source: "football-data.org",
     matches,
   };
 
   writeFileSync(OUT, JSON.stringify(out, null, 2) + "\n");
-  console.log(`Wrote ${matches.length} matches. Scores changed: ${scoresChanged}`);
+  console.log(`Wrote ${matches.length} matches (scores changed).`);
 }
 
 main().catch(err => { console.error(err); process.exit(1); });
