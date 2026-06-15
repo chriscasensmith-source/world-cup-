@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-15T20:22:26.306Z",
-  "lastSynced": "2026-06-15T20:22:26.306Z",
+  "lastChecked": "2026-06-15T20:34:34.697Z",
+  "lastSynced": "2026-06-15T20:34:34.697Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -167,10 +167,10 @@
       "date": "2026-06-15",
       "home": "Belgium",
       "away": "Egypt",
-      "homeScore": 0,
+      "homeScore": 1,
       "awayScore": 1,
       "status": "IN_PLAY",
-      "winner": "Egypt"
+      "winner": null
     },
     {
       "id": "fd-537370",
