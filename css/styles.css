@@ -58,6 +58,8 @@ body {
   font-family: inherit; line-height: 1;
 }
 .sync-refresh:hover { opacity: 1; }
+.sync-refresh.is-spinning { animation: spin .6s linear; opacity: 1; }
+@keyframes spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
 @keyframes flashSync {
   0%, 100% { background: rgba(245,179,1,.08); }
   30% { background: rgba(34,201,147,.22); border-color: var(--green); }

@@ -585,13 +585,18 @@
   }
 
   let lastFetchSig = "";
-  async function refreshResults(flash) {
+  let lastApiCall = 0;
+  async function refreshResults(flash, force) {
     try {
       let matches = null;
       let checkedAt = new Date().toISOString();
 
       const token = C.apiToken;
-      if (token) {
+      // Throttle API calls to respect the free-tier rate limit (10/min). A
+      // manual ↺ press (force) bypasses the throttle; auto/focus calls don't.
+      const throttled = !force && Date.now() - lastApiCall < 15000;
+      if (token && !throttled) {
+        lastApiCall = Date.now();
         // Direct API call — always live, no scheduler delay.
         const res = await fetch(
           "https://api.football-data.org/v4/competitions/WC/matches",
@@ -638,7 +643,15 @@
       if (document.visibilityState === "visible") refreshResults(true);
     });
 
-    document.getElementById("hardReloadBtn")?.addEventListener("click", () => location.reload());
+    // ↺ button: force an immediate live fetch (bypasses throttle), with a
+    // quick spin so it's obvious something happened.
+    document.getElementById("hardReloadBtn")?.addEventListener("click", e => {
+      const btn = e.currentTarget;
+      btn.classList.add("is-spinning");
+      refreshResults(true, true).finally(() =>
+        setTimeout(() => btn.classList.remove("is-spinning"), 600)
+      );
+    });
 
     if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
       navigator.serviceWorker.register("sw.js").then(reg => {
