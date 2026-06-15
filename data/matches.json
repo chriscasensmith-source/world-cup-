@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-15T07:08:37.238Z",
-  "lastSynced": "2026-06-15T07:08:37.238Z",
+  "lastChecked": "2026-06-15T07:10:09.332Z",
+  "lastSynced": "2026-06-15T07:10:09.332Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -133,7 +133,7 @@
       "away": "Ecuador",
       "homeScore": 1,
       "awayScore": 0,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "winner": "Ivory Coast"
     },
     {
