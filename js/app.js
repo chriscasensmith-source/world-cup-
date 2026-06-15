@@ -591,27 +591,28 @@
       let matches = null;
       let checkedAt = new Date().toISOString();
 
-      const token = C.apiToken;
-      // Throttle API calls to respect the free-tier rate limit (10/min). A
-      // manual ↺ press (force) bypasses the throttle; auto/focus calls don't.
+      // Optional live source: a proxy/worker URL (C.apiBase) that returns the
+      // football-data.org matches JSON with CORS headers. Direct calls to
+      // football-data.org are blocked by CORS in browsers, so this only works
+      // through a proxy. Wrapped so ANY failure falls back to the file below.
+      const base = C.apiBase;
       const throttled = !force && Date.now() - lastApiCall < 15000;
-      if (token && !throttled) {
+      if (base && !throttled) {
         lastApiCall = Date.now();
-        // Direct API call — always live, no scheduler delay.
-        const res = await fetch(
-          "https://api.football-data.org/v4/competitions/WC/matches",
-          { headers: { "X-Auth-Token": token } }
-        );
-        if (res.ok) {
-          const data = await res.json();
-          if (Array.isArray(data.matches) && data.matches.length) {
-            matches = parseAPIMatches(data.matches);
+        try {
+          const headers = C.apiToken ? { "X-Auth-Token": C.apiToken } : {};
+          const res = await fetch(base, { headers });
+          if (res.ok) {
+            const data = await res.json();
+            if (Array.isArray(data.matches) && data.matches.length) {
+              matches = parseAPIMatches(data.matches);
+            }
           }
-        }
+        } catch { /* proxy unreachable / CORS — fall back to the file */ }
       }
 
       if (!matches) {
-        // Fallback: committed data/matches.json (updated by GitHub Action).
+        // Fallback: committed data/matches.json (updated by the GitHub Action poller).
         const res = await fetch("data/matches.json?_=" + Date.now(), { cache: "no-store" });
         if (!res.ok) return;
         const data = await res.json();
@@ -638,7 +639,7 @@
     renderAll();
     await refreshResults(false);
 
-    setInterval(() => refreshResults(true), 60 * 1000);
+    setInterval(() => refreshResults(true), 30 * 1000);
     document.addEventListener("visibilitychange", () => {
       if (document.visibilityState === "visible") refreshResults(true);
     });

@@ -3,8 +3,14 @@
    Edit this file to change players, rosters, or tournament details.
    ===================================================================== */
 window.CONFIG = {
-  // football-data.org free API token — used for direct live fetching in the browser.
-  // Get yours at https://www.football-data.org/client/register
+  // Live results come from data/matches.json, refreshed every ~90s by the
+  // GitHub Action poller (.github/workflows/update-results.yml).
+  //
+  // football-data.org blocks direct browser calls (CORS), so to fetch live in
+  // the browser you need a proxy that adds CORS headers (e.g. a free Cloudflare
+  // Worker). Put that proxy URL in `apiBase` and your token in `apiToken` to
+  // enable instant in-browser updates. Left blank = use the polled file.
+  apiBase: "",
   apiToken: "1bd33a67a606424a9d9bc76eb1062f9f",
 
   kicker: "2026 FIFA World Cup · USA / Canada / Mexico",

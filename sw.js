@@ -1,6 +1,6 @@
 /* Service worker — network-first, always bypasses HTTP cache for code files
    so stale JS/CSS/HTML can never get stuck. Cache is offline fallback only. */
-const CACHE = "wc26-v14";
+const CACHE = "wc26-v15";
 
 self.addEventListener("install", e => {
   e.waitUntil(self.skipWaiting());
