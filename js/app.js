@@ -533,17 +533,91 @@
     if (modalStack.length) renderModal();   // keep an open breakdown current
   }
 
-  // ---- Live refresh ----------------------------------------------------
+  // ---- Live refresh — fetches directly from football-data.org API ----------
+  // No GitHub Action middleman means results are always instantaneous.
+  const STAGE_MAP = {
+    GROUP_STAGE:"GROUP", LAST_32:"R32", LAST_16:"R16",
+    QUARTER_FINALS:"QF", QUARTER_FINAL:"QF",
+    SEMI_FINALS:"SF", SEMI_FINAL:"SF",
+    THIRD_PLACE:"3RD", FINAL:"FINAL",
+  };
+  const STATUS_MAP = {
+    SCHEDULED:"SCHEDULED", TIMED:"SCHEDULED",
+    IN_PLAY:"IN_PLAY", PAUSED:"PAUSED",
+    FINISHED:"FINISHED", AWARDED:"FINISHED",
+    POSTPONED:"SCHEDULED", SUSPENDED:"SCHEDULED", CANCELLED:"SCHEDULED",
+  };
+  function apiWinner(m, home, away) {
+    const ft = m.score?.fullTime || {};
+    const pens = m.score?.penalties || {};
+    const w = m.score?.winner;
+    const isKO = STAGE_MAP[m.stage] !== "GROUP";
+    if (w === "HOME_TEAM") return home;
+    if (w === "AWAY_TEAM") return away;
+    if (w === "DRAW") {
+      if (isKO && Number.isFinite(pens.home) && Number.isFinite(pens.away))
+        return pens.home > pens.away ? home : away;
+      return null;
+    }
+    if (Number.isFinite(ft.home) && Number.isFinite(ft.away) && !isKO) {
+      if (ft.home > ft.away) return home;
+      if (ft.away > ft.home) return away;
+    }
+    return null;
+  }
+  function parseAPIMatches(raw) {
+    return raw.map(m => {
+      const home = canonical(m.homeTeam?.name || m.homeTeam?.shortName || "");
+      const away = canonical(m.awayTeam?.name || m.awayTeam?.shortName || "");
+      const stage = STAGE_MAP[m.stage] || "GROUP";
+      const ft = m.score?.fullTime || {};
+      return {
+        id: `fd-${m.id}`, stage,
+        group: m.group ? String(m.group).replace(/GROUP[_\s]?/i, "") : null,
+        date: (m.utcDate || "").slice(0, 10),
+        home, away,
+        homeScore: Number.isFinite(ft.home) ? ft.home : null,
+        awayScore: Number.isFinite(ft.away) ? ft.away : null,
+        status: STATUS_MAP[m.status] || "SCHEDULED",
+        winner: apiWinner(m, home, away),
+      };
+    }).filter(m => m.home && m.away);
+  }
+
   let lastFetchSig = "";
   async function refreshResults(flash) {
     try {
-      const res = await fetch("data/matches.json?_=" + Date.now(), { cache: "no-store" });
-      if (!res.ok) return;
-      const data = await res.json();
-      const sig = JSON.stringify(data.matches) + (data.lastSynced || "");
+      let matches = null;
+      let checkedAt = new Date().toISOString();
+
+      const token = C.apiToken;
+      if (token) {
+        // Direct API call — always live, no scheduler delay.
+        const res = await fetch(
+          "https://api.football-data.org/v4/competitions/WC/matches",
+          { headers: { "X-Auth-Token": token } }
+        );
+        if (res.ok) {
+          const data = await res.json();
+          if (Array.isArray(data.matches) && data.matches.length) {
+            matches = parseAPIMatches(data.matches);
+          }
+        }
+      }
+
+      if (!matches) {
+        // Fallback: committed data/matches.json (updated by GitHub Action).
+        const res = await fetch("data/matches.json?_=" + Date.now(), { cache: "no-store" });
+        if (!res.ok) return;
+        const data = await res.json();
+        matches = data.matches;
+        checkedAt = data.lastChecked || checkedAt;
+      }
+
+      const sig = JSON.stringify(matches);
       if (sig === lastFetchSig) return;
       lastFetchSig = sig;
-      remote = data;
+      remote = { matches, lastChecked: checkedAt, lastSynced: checkedAt };
       renderAll();
       if (flash) {
         const line = el("syncLine");

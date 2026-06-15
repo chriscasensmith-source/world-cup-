@@ -3,6 +3,10 @@
    Edit this file to change players, rosters, or tournament details.
    ===================================================================== */
 window.CONFIG = {
+  // football-data.org free API token — used for direct live fetching in the browser.
+  // Get yours at https://www.football-data.org/client/register
+  apiToken: "",
+
   kicker: "2026 FIFA World Cup · USA / Canada / Mexico",
   title: "Fantasy WC26",
   dates: "June 11 – July 19, 2026",
