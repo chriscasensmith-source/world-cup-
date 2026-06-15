@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-15T02:03:58.956Z",
-  "lastSynced": "2026-06-15T02:03:58.956Z",
+  "lastChecked": "2026-06-15T02:42:33.702Z",
+  "lastSynced": "2026-06-15T02:42:33.702Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -143,10 +143,10 @@
       "date": "2026-06-15",
       "home": "Sweden",
       "away": "Tunisia",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
+      "homeScore": 2,
+      "awayScore": 0,
+      "status": "IN_PLAY",
+      "winner": "Sweden"
     },
     {
       "id": "fd-537369",
