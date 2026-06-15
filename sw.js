@@ -1,15 +1,12 @@
-/* Service worker — network-first so code & results are always fresh, with
-   cache as an offline fallback only. Never pre-caches, never messages clients
-   (an earlier RELOAD postMessage caused an infinite reload loop). */
-const CACHE = "wc26-v11";
+/* Service worker — network-first, always bypasses HTTP cache for code files
+   so stale JS/CSS/HTML can never get stuck. Cache is offline fallback only. */
+const CACHE = "wc26-v12";
 
 self.addEventListener("install", e => {
-  // Activate immediately; nothing to pre-cache.
   e.waitUntil(self.skipWaiting());
 });
 
 self.addEventListener("activate", e => {
-  // Drop every old cache, then take control of open pages.
   e.waitUntil(
     caches.keys()
       .then(keys => Promise.all(keys.map(k => caches.delete(k))))
@@ -21,9 +18,16 @@ self.addEventListener("fetch", e => {
   const req = e.request;
   if (req.method !== "GET") return;
 
-  // Always try the network first; fall back to cache only when offline.
+  const url = new URL(req.url);
+  const isCode = /\.(html|js|css)(\?|$)/.test(url.pathname);
+
+  // For HTML/JS/CSS: bypass the browser HTTP cache entirely so GitHub Pages
+  // CDN staleness can't block new code from reaching the page.
+  // For everything else (fonts, images, data): normal network-first.
+  const networkReq = isCode ? new Request(req.url, { cache: "no-cache" }) : req;
+
   e.respondWith(
-    fetch(req)
+    fetch(networkReq)
       .then(res => {
         if (res && res.ok) {
           const copy = res.clone();
