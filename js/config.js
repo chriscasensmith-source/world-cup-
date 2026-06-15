@@ -5,7 +5,7 @@
 window.CONFIG = {
   // football-data.org free API token — used for direct live fetching in the browser.
   // Get yours at https://www.football-data.org/client/register
-  apiToken: "",
+  apiToken: "1bd33a67a606424a9d9bc76eb1062f9f",
 
   kicker: "2026 FIFA World Cup · USA / Canada / Mexico",
   title: "Fantasy WC26",
