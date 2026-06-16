@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-15T23:53:00.811Z",
-  "lastSynced": "2026-06-15T23:53:00.811Z",
+  "lastChecked": "2026-06-16T00:09:39.748Z",
+  "lastSynced": "2026-06-16T00:09:39.748Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -181,7 +181,7 @@
       "away": "Uruguay",
       "homeScore": 1,
       "awayScore": 1,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "winner": null
     },
     {
