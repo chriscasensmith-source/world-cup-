@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-16T20:53:36.961Z",
-  "lastSynced": "2026-06-16T20:53:36.961Z",
+  "lastChecked": "2026-06-16T21:05:43.734Z",
+  "lastSynced": "2026-06-16T21:05:43.734Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -204,7 +204,7 @@
       "home": "France",
       "away": "Senegal",
       "homeScore": 2,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "IN_PLAY",
       "winner": "France"
     },
