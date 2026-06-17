@@ -632,11 +632,14 @@
         if (!matches) return;
       }
 
+      // Always update "Checked X ago" so users can see the browser is actively
+      // polling even when no scores have changed.
+      remote.lastChecked = checkedAt;
+      renderSync();
+
       const sig = JSON.stringify(matches);
       if (sig === lastFetchSig) return;
       lastFetchSig = sig;
-      // Show when the browser last pulled fresh data, not the file's timestamp —
-      // the data is current as of now regardless of when scores last changed.
       remote = { matches, lastChecked: checkedAt, lastSynced: checkedAt };
       renderAll();
       if (flash) {
