@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-17T05:10:05.401Z",
-  "lastSynced": "2026-06-17T05:10:05.401Z",
+  "lastChecked": "2026-06-17T05:16:10.356Z",
+  "lastSynced": "2026-06-17T05:16:10.356Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -241,7 +241,7 @@
       "away": "Jordan",
       "homeScore": 1,
       "awayScore": 0,
-      "status": "PAUSED",
+      "status": "IN_PLAY",
       "winner": "Austria"
     },
     {
