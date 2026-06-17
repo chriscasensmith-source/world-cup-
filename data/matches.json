@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-17T17:14:40.883Z",
-  "lastSynced": "2026-06-17T17:14:40.883Z",
+  "lastChecked": "2026-06-17T17:58:35.781Z",
+  "lastSynced": "2026-06-17T17:58:35.781Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -35,8 +35,8 @@
       "date": "2026-06-12",
       "home": "Canada",
       "away": "Bosnia & Herzegovina",
-      "homeScore": 1,
-      "awayScore": 1,
+      "homeScore": null,
+      "awayScore": null,
       "status": "FINISHED",
       "winner": null
     },
@@ -252,9 +252,9 @@
       "home": "Portugal",
       "away": "DR Congo",
       "homeScore": 1,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "IN_PLAY",
-      "winner": "Portugal"
+      "winner": null
     },
     {
       "id": "fd-537409",
