@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-17T20:40:38.025Z",
-  "lastSynced": "2026-06-17T20:40:38.025Z",
+  "lastChecked": "2026-06-17T20:42:09.917Z",
+  "lastSynced": "2026-06-17T20:42:09.917Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -264,9 +264,9 @@
       "home": "England",
       "away": "Croatia",
       "homeScore": 1,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "IN_PLAY",
-      "winner": "England"
+      "winner": null
     },
     {
       "id": "fd-537410",
