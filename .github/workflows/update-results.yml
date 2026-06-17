@@ -13,10 +13,12 @@ on:
 permissions:
   contents: write
 
-# Only one poller at a time; never cancel a running one.
+# Only one poller at a time. cancel-in-progress: true means a manual trigger
+# (or the 4h schedule) immediately replaces the running poller — so "Run workflow"
+# always works instead of being queued and silently cancelled.
 concurrency:
   group: update-results
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   update:
