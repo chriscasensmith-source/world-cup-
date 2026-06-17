@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-17T18:53:02.281Z",
-  "lastSynced": "2026-06-17T18:53:02.281Z",
+  "lastChecked": "2026-06-17T19:05:09.992Z",
+  "lastSynced": "2026-06-17T19:05:09.992Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -253,7 +253,7 @@
       "away": "DR Congo",
       "homeScore": 1,
       "awayScore": 1,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "winner": null
     },
     {
