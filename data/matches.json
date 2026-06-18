@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-18T23:32:09.415Z",
-  "lastSynced": "2026-06-18T23:32:09.415Z",
+  "lastChecked": "2026-06-18T23:44:17.066Z",
+  "lastSynced": "2026-06-18T23:44:17.066Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -323,7 +323,7 @@
       "date": "2026-06-18",
       "home": "Canada",
       "away": "Qatar",
-      "homeScore": 4,
+      "homeScore": 5,
       "awayScore": 0,
       "status": "IN_PLAY",
       "winner": "Canada"
