@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-18T16:55:08.308Z",
-  "lastSynced": "2026-06-18T16:55:08.308Z",
+  "lastChecked": "2026-06-18T17:11:48.628Z",
+  "lastSynced": "2026-06-18T17:11:48.628Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -301,7 +301,7 @@
       "away": "South Africa",
       "homeScore": 1,
       "awayScore": 0,
-      "status": "PAUSED",
+      "status": "IN_PLAY",
       "winner": "Czechia"
     },
     {
