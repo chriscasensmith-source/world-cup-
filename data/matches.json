@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-18T21:01:41.746Z",
-  "lastSynced": "2026-06-18T21:01:41.746Z",
+  "lastChecked": "2026-06-18T21:03:13.507Z",
+  "lastSynced": "2026-06-18T21:03:13.507Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -313,7 +313,7 @@
       "away": "Bosnia & Herzegovina",
       "homeScore": 4,
       "awayScore": 1,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "winner": "Switzerland"
     },
     {
