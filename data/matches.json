@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-18T08:13:48.937Z",
-  "lastSynced": "2026-06-18T08:13:48.937Z",
+  "lastChecked": "2026-06-18T08:15:20.734Z",
+  "lastSynced": "2026-06-18T08:15:20.734Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -277,7 +277,7 @@
       "away": "Panama",
       "homeScore": 1,
       "awayScore": 0,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "winner": "Ghana"
     },
     {
