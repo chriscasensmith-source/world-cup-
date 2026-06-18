@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-18T04:03:00.263Z",
-  "lastSynced": "2026-06-18T04:03:00.263Z",
+  "lastChecked": "2026-06-18T04:07:34.024Z",
+  "lastSynced": "2026-06-18T04:07:34.024Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -277,7 +277,7 @@
       "away": "Panama",
       "homeScore": 1,
       "awayScore": 0,
-      "status": "FINISHED",
+      "status": "IN_PLAY",
       "winner": "Ghana"
     },
     {
@@ -288,7 +288,7 @@
       "home": "Uzbekistan",
       "away": "Colombia",
       "homeScore": 1,
-      "awayScore": 2,
+      "awayScore": 3,
       "status": "IN_PLAY",
       "winner": "Colombia"
     },
