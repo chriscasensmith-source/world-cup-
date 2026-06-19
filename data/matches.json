@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-19T20:10:48.858Z",
-  "lastSynced": "2026-06-19T20:10:48.858Z",
+  "lastChecked": "2026-06-19T20:16:55.315Z",
+  "lastSynced": "2026-06-19T20:16:55.315Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -349,7 +349,7 @@
       "away": "Australia",
       "homeScore": 2,
       "awayScore": 0,
-      "status": "PAUSED",
+      "status": "IN_PLAY",
       "winner": "USA"
     },
     {
