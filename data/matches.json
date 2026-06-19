@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-19T02:54:03.698Z",
-  "lastSynced": "2026-06-19T02:54:03.698Z",
+  "lastChecked": "2026-06-19T03:04:45.268Z",
+  "lastSynced": "2026-06-19T03:04:45.268Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -337,7 +337,7 @@
       "away": "South Korea",
       "homeScore": 1,
       "awayScore": 0,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "winner": "Mexico"
     },
     {
