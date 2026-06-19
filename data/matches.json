@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-19T01:28:59.932Z",
-  "lastSynced": "2026-06-19T01:28:59.932Z",
+  "lastChecked": "2026-06-19T01:41:08.454Z",
+  "lastSynced": "2026-06-19T01:41:08.454Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -35,8 +35,8 @@
       "date": "2026-06-12",
       "home": "Canada",
       "away": "Bosnia & Herzegovina",
-      "homeScore": 1,
-      "awayScore": 1,
+      "homeScore": null,
+      "awayScore": null,
       "status": "FINISHED",
       "winner": null
     },
