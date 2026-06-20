@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-20T17:11:14.719Z",
-  "lastSynced": "2026-06-20T17:11:14.719Z",
+  "lastChecked": "2026-06-20T17:23:12.934Z",
+  "lastSynced": "2026-06-20T17:23:12.934Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -395,7 +395,7 @@
       "date": "2026-06-20",
       "home": "Netherlands",
       "away": "Sweden",
-      "homeScore": 1,
+      "homeScore": 2,
       "awayScore": 0,
       "status": "IN_PLAY",
       "winner": "Netherlands"
