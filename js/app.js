@@ -121,11 +121,33 @@
     return `<span class="chip" data-player="${p.id}" style="--c:${p.color}">${esc(p.name)}</span>`;
   }
 
-  function teamLine(teams) {
-    return teams.map(t => `<span class="team-link" data-team="${esc(t)}">${flag(t)}&nbsp;${esc(t)}</span>`).join(", ");
+  // Compact flag chips for the leaderboard. Shows the first `max` teams as tidy
+  // chips, then a "+N more" pill — the whole card is tappable to see the rest.
+  function teamChips(teams, max) {
+    const shown = teams.slice(0, max);
+    const extra = teams.length - shown.length;
+    const chips = shown.map(t =>
+      `<span class="tchip team-link" data-team="${esc(t)}">${flag(t)}&nbsp;${esc(t)}</span>`).join("");
+    const more = extra > 0 ? `<span class="tchip tchip--more">+${extra} more</span>` : "";
+    return chips + more;
   }
 
   const medals = ["🥇", "🥈", "🥉"];
+  const PLACE_LABEL = ["Champion", "Runner-up", "Third place"];
+  // Finishing-position display treatment. The last of four is — affectionately —
+  // "The Idiot!". This is purely cosmetic: standings order and scoring are
+  // untouched, it only changes the badge + label shown for that position.
+  function rankMeta(i, total) {
+    const place = i + 1;
+    if (place === total && total >= 4) {
+      return { badge: "💀", label: "The Idiot!", cls: "is-idiot" };
+    }
+    return {
+      badge: medals[i] || `<span class="rank__num">${place}</span>`,
+      label: PLACE_LABEL[i] || `${place}th place`,
+      cls: `is-rank-${place}`,
+    };
+  }
   const RANK_LABEL = { 1: "Group stage", 2: "Round of 32", 3: "Round of 16", 4: "Quarter-finals", 5: "Semi-finals", 6: "Final / Champion" };
   const fmtDate = d => d ? new Date(d + "T12:00:00").toLocaleDateString(undefined, { month: "short", day: "numeric" }) : "";
 
@@ -133,13 +155,13 @@
   function renderStandings() {
     const rows = computeStandings();
     const html = rows.map((s, i) => {
-      const rank = medals[i] || `<span class="rank__num">${i + 1}</span>`;
+      const rm = rankMeta(i, rows.length);
       return `
-      <div class="lb-card clickable" data-player="${s.id}" style="--c:${s.color}">
-        <div class="lb-rank">${rank}</div>
+      <div class="lb-card clickable ${rm.cls}" data-player="${s.id}" style="--c:${s.color}; --i:${i}">
+        <div class="lb-rank">${rm.badge}</div>
         <div class="lb-body">
-          <div class="lb-name">${esc(s.name)}<span class="lb-go">›</span></div>
-          <div class="lb-teams">${teamLine(C.rosters[s.id])}</div>
+          <div class="lb-name">${esc(s.name)}<span class="lb-badge">${esc(rm.label)}</span><span class="lb-go">›</span></div>
+          <div class="lb-teams">${teamChips(C.rosters[s.id], 6)}</div>
         </div>
         <div class="lb-score">
           <div class="lb-wins">${s.wins}</div>
@@ -415,7 +437,7 @@
     const p = PLAYER_BY_ID[pid];
     const recs = C.rosters[pid].map(teamRecord);
     const alive = recs.filter(r => !r.koOut).length;
-    const rankBadge = medals[idx] || `#${idx + 1}`;
+    const rm = rankMeta(idx, standings.length);
     const teamRows = recs.map(r => {
       const out = r.koOut ? `<span class="dt-out">OUT</span>` : "";
       const rec = r.played
@@ -430,10 +452,10 @@
     return `
     <div class="detail">
       <div class="detail__head">
-        <div class="detail__rank" style="--c:${p.color}">${rankBadge}</div>
+        <div class="detail__rank ${rm.cls}" style="--c:${p.color}">${rm.badge}</div>
         <div>
           <div class="detail__title" style="color:${p.color}">${esc(p.name)}</div>
-          <div class="detail__sub">${s.wins} wins · ${s.goals} goals</div>
+          <div class="detail__sub"><span class="detail__place ${rm.cls}">${esc(rm.label)}</span> · ${s.wins} wins · ${s.goals} goals</div>
         </div>
       </div>
       <div class="detail__stats">
@@ -491,12 +513,29 @@
 
   // ---- Tabs ------------------------------------------------------------
   function initTabs() {
+    const tabs = document.querySelector(".tabs");
+    // A single sliding underline that animates to the active tab. Positioned
+    // from each button's real geometry, so it stays correct when the layout
+    // reflows (rotation, resize) without any hard-coded pixel math.
+    const indicator = document.createElement("div");
+    indicator.className = "tab-indicator";
+    tabs.appendChild(indicator);
+    const activeTab = () => document.querySelector(".tab.is-active") || document.querySelector(".tab");
+    const moveIndicator = btn => {
+      if (!btn) return;
+      indicator.style.width = btn.offsetWidth + "px";
+      indicator.style.transform = `translateX(${btn.offsetLeft}px)`;
+    };
+    requestAnimationFrame(() => moveIndicator(activeTab()));
+    window.addEventListener("resize", () => moveIndicator(activeTab()));
+
     document.querySelectorAll(".tab").forEach(btn => {
       btn.addEventListener("click", () => {
         document.querySelectorAll(".tab").forEach(b => b.classList.toggle("is-active", b === btn));
         const name = btn.dataset.tab;
         document.querySelectorAll(".panel").forEach(p =>
           p.classList.toggle("is-active", p.id === "panel-" + name));
+        moveIndicator(btn);
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
     });
@@ -518,7 +557,7 @@
     const ago = timeAgo(checked);
     // Only update the text span — never the whole line, or we'd wipe the ↺ button.
     const t = el("syncText") || el("syncLine");
-    t.innerHTML = `🔄 Checked for results <b>${esc(ago)}</b>`;
+    t.innerHTML = `<span class="sync-dot" aria-hidden="true"></span> Checked for results <b>${esc(ago)}</b>`;
     el("heroKicker").textContent = C.kicker;
     el("heroPlayers").textContent = C.players.map(p => p.name).join(" · ");
     el("heroDates").textContent = C.dates;

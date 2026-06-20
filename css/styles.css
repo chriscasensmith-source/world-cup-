@@ -342,3 +342,116 @@ body.modal-open { overflow: hidden; }
   .match__score-display { font-size: 24px; }
   .mt__name { font-size: 14px; }
 }
+
+/* =====================================================================
+   Premium polish — rank treatments, team chips, live status, motion.
+   Layered on top of the base styles above; later source order gives these
+   precedence on specificity ties. Pure CSS, no framework / build step.
+   ===================================================================== */
+:root {
+  --silver: #c8cfdd;
+  --bronze: #d4894b;
+  --purple: #8b5cf6;
+  --idiot:  #ff8a1f;   /* warning amber — playful, not harsh */
+}
+
+/* ---- Rank label pill beside the player name ---- */
+.lb-name { flex-wrap: wrap; }
+.lb-badge {
+  font-size: 10px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase;
+  color: var(--muted); background: rgba(255,255,255,.05);
+  border: 1px solid var(--line); border-radius: 999px; padding: 2px 8px;
+  white-space: nowrap; flex: none; line-height: 1.5;
+}
+.lb-card.is-rank-1 .lb-badge { color: #1a1400; background: var(--gold); border-color: transparent; }
+.lb-card.is-rank-2 .lb-badge { color: #ece6ff; background: rgba(139,92,246,.22); border-color: rgba(139,92,246,.5); }
+.lb-card.is-rank-3 .lb-badge { color: #ffd9b3; background: rgba(212,137,75,.2); border-color: rgba(212,137,75,.5); }
+.lb-card.is-idiot  .lb-badge { color: #1a1200; background: var(--idiot); border-color: transparent; }
+
+/* ---- Rank-based card glow (overrides .is-leader via later source order) ---- */
+.lb-card.is-rank-1 {
+  border-color: rgba(245,179,1,.45);
+  box-shadow: 0 0 0 1px rgba(245,179,1,.3), 0 12px 38px rgba(245,179,1,.16), 0 0 34px rgba(255,77,109,.1);
+}
+.lb-card.is-rank-2 { box-shadow: 0 8px 26px rgba(139,92,246,.13); }
+.lb-card.is-rank-3 { box-shadow: 0 8px 26px rgba(212,137,75,.13); }
+
+/* ---- 4th place — "The Idiot!" : playful but still tasteful ---- */
+.lb-card.is-idiot {
+  border-left-color: var(--idiot);
+  border-left-style: dashed;
+  background:
+    repeating-linear-gradient(45deg, rgba(255,138,31,.05) 0 10px, transparent 10px 20px),
+    var(--card);
+}
+.lb-rank { font-size: 28px; text-align: center; line-height: 1; }
+.lb-card.is-idiot .lb-rank { animation: wobble 2.6s ease-in-out infinite; transform-origin: 50% 60%; }
+@keyframes wobble {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(8deg); }
+}
+
+/* ---- Team chips (replaces the long comma paragraph) ---- */
+.lb-teams { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; line-height: 1.5; }
+.tchip {
+  display: inline-flex; align-items: center;
+  font-size: 12px; font-weight: 600; color: var(--text);
+  background: var(--card-2); border: 1px solid var(--line);
+  border-radius: 8px; padding: 3px 8px; white-space: nowrap;
+  transition: border-color .12s, background .12s;
+}
+.tchip.team-link:hover { border-color: var(--c); background: rgba(255,255,255,.05); text-decoration: none; }
+.tchip--more { color: var(--muted); background: transparent; font-weight: 700; }
+
+/* ---- Card entrance / standings-update stagger ---- */
+.lb-card { animation: cardIn .5s cubic-bezier(.2,.8,.2,1) backwards; animation-delay: calc(var(--i, 0) * .07s); }
+@keyframes cardIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+/* ---- Player modal: rank badge + place label per position ---- */
+.detail__rank.is-rank-1 { background: rgba(245,179,1,.16); border-color: rgba(245,179,1,.5); color: var(--gold); }
+.detail__rank.is-rank-2 { background: rgba(139,92,246,.16); border-color: rgba(139,92,246,.5); color: #b89cff; }
+.detail__rank.is-rank-3 { background: rgba(212,137,75,.16); border-color: rgba(212,137,75,.5); color: var(--bronze); }
+.detail__rank.is-idiot  { background: rgba(255,138,31,.16); border-color: rgba(255,138,31,.55); color: var(--idiot);
+                          animation: wobble 2.6s ease-in-out infinite; transform-origin: 50% 60%; }
+.detail__place { font-weight: 800; text-transform: uppercase; letter-spacing: .05em; font-size: 11px; color: var(--gold-soft); }
+.detail__place.is-rank-2 { color: #b89cff; }
+.detail__place.is-rank-3 { color: var(--bronze); }
+.detail__place.is-idiot  { color: var(--idiot); }
+
+/* ---- Sliding tab indicator ---- */
+.tab-indicator {
+  position: absolute; bottom: 5px; left: 0; height: 3px; width: 0;
+  background: var(--gold); border-radius: 3px; pointer-events: none;
+  box-shadow: 0 0 8px rgba(245,179,1,.5);
+  transition: transform .3s cubic-bezier(.2,.8,.2,1), width .3s cubic-bezier(.2,.8,.2,1);
+}
+
+/* ---- Live status badge ---- */
+.hero__sync { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.sync-dot {
+  width: 9px; height: 9px; border-radius: 50%; flex: none;
+  background: var(--green); animation: livePulse 2s ease-out infinite;
+}
+@keyframes livePulse {
+  0%   { box-shadow: 0 0 0 0 rgba(34,201,147,.5); }
+  70%  { box-shadow: 0 0 0 7px rgba(34,201,147,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,201,147,0); }
+}
+
+/* ---- Mobile-first hero: shorter so the leaderboard appears sooner ---- */
+@media (max-width: 560px) {
+  .hero { padding: 22px 16px 18px; margin-top: 10px; }
+  .hero__title { font-size: clamp(40px, 13vw, 56px); }
+  .hero__meta { font-size: 13px; margin-top: 8px; }
+  .hero__sync { margin-top: 14px; font-size: 13px; }
+}
+
+/* ---- Respect reduced-motion preferences ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
