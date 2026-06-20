@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-20T01:23:19.457Z",
-  "lastSynced": "2026-06-20T01:23:19.457Z",
+  "lastChecked": "2026-06-20T01:26:22.010Z",
+  "lastSynced": "2026-06-20T01:26:22.010Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -371,7 +371,7 @@
       "date": "2026-06-20",
       "home": "Brazil",
       "away": "Haiti",
-      "homeScore": 1,
+      "homeScore": 2,
       "awayScore": 0,
       "status": "IN_PLAY",
       "winner": "Brazil"
