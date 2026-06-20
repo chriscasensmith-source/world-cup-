@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-20T21:57:30.043Z",
-  "lastSynced": "2026-06-20T21:57:30.043Z",
+  "lastChecked": "2026-06-20T22:02:04.836Z",
+  "lastSynced": "2026-06-20T22:02:04.836Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -407,10 +407,10 @@
       "date": "2026-06-20",
       "home": "Germany",
       "away": "Ivory Coast",
-      "homeScore": 1,
+      "homeScore": 2,
       "awayScore": 1,
       "status": "IN_PLAY",
-      "winner": null
+      "winner": "Germany"
     },
     {
       "id": "fd-537354",
