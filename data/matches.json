@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-21T04:11:53.792Z",
-  "lastSynced": "2026-06-21T04:11:53.792Z",
+  "lastChecked": "2026-06-21T04:39:09.451Z",
+  "lastSynced": "2026-06-21T04:39:09.451Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -432,7 +432,7 @@
       "home": "Tunisia",
       "away": "Japan",
       "homeScore": 0,
-      "awayScore": 1,
+      "awayScore": 2,
       "status": "IN_PLAY",
       "winner": "Japan"
     },
