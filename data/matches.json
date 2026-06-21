@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-21T16:30:02.590Z",
-  "lastSynced": "2026-06-21T16:30:02.590Z",
+  "lastChecked": "2026-06-21T16:33:05.129Z",
+  "lastSynced": "2026-06-21T16:33:05.129Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -443,7 +443,7 @@
       "date": "2026-06-21",
       "home": "Spain",
       "away": "Saudi Arabia",
-      "homeScore": 2,
+      "homeScore": 3,
       "awayScore": 0,
       "status": "IN_PLAY",
       "winner": "Spain"
