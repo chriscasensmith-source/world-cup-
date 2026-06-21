@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-20T22:47:34.738Z",
-  "lastSynced": "2026-06-20T22:47:34.738Z",
+  "lastChecked": "2026-06-21T00:06:16.051Z",
+  "lastSynced": "2026-06-21T00:06:16.051Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -419,9 +419,9 @@
       "date": "2026-06-21",
       "home": "Ecuador",
       "away": "Curaçao",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "IN_PLAY",
       "winner": null
     },
     {
