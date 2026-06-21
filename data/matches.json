@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-21T00:56:20.164Z",
-  "lastSynced": "2026-06-21T00:56:20.164Z",
+  "lastChecked": "2026-06-21T01:09:58.382Z",
+  "lastSynced": "2026-06-21T01:09:58.382Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -421,7 +421,7 @@
       "away": "Curaçao",
       "homeScore": 0,
       "awayScore": 0,
-      "status": "PAUSED",
+      "status": "IN_PLAY",
       "winner": null
     },
     {
