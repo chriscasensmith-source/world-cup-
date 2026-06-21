@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-21T18:58:25.816Z",
-  "lastSynced": "2026-06-21T18:58:25.816Z",
+  "lastChecked": "2026-06-21T19:07:30.783Z",
+  "lastSynced": "2026-06-21T19:07:30.783Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -455,9 +455,9 @@
       "date": "2026-06-21",
       "home": "Belgium",
       "away": "Iran",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "IN_PLAY",
       "winner": null
     },
     {
