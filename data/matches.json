@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-21T23:54:49.829Z",
-  "lastSynced": "2026-06-21T23:54:49.829Z",
+  "lastChecked": "2026-06-22T00:11:28.023Z",
+  "lastSynced": "2026-06-22T00:11:28.023Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -469,7 +469,7 @@
       "away": "Cape Verde",
       "homeScore": 2,
       "awayScore": 2,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "winner": null
     },
     {
