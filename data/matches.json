@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-22T17:59:35.686Z",
-  "lastSynced": "2026-06-22T17:59:35.686Z",
+  "lastChecked": "2026-06-22T18:14:45.586Z",
+  "lastSynced": "2026-06-22T18:14:45.586Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -493,7 +493,7 @@
       "away": "Austria",
       "homeScore": 1,
       "awayScore": 0,
-      "status": "PAUSED",
+      "status": "IN_PLAY",
       "winner": "Argentina"
     },
     {
