@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-22T01:21:11.319Z",
-  "lastSynced": "2026-06-22T01:21:11.319Z",
+  "lastChecked": "2026-06-22T01:22:43.003Z",
+  "lastSynced": "2026-06-22T01:22:43.003Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -479,10 +479,10 @@
       "date": "2026-06-22",
       "home": "New Zealand",
       "away": "Egypt",
-      "homeScore": 0,
+      "homeScore": 1,
       "awayScore": 0,
       "status": "IN_PLAY",
-      "winner": null
+      "winner": "New Zealand"
     },
     {
       "id": "fd-537399",
