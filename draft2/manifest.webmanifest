@@ -1,0 +1,14 @@
+{
+  "name": "Fantasy WC26 · League 2",
+  "short_name": "WC26 L2",
+  "description": "Live points standings for our 2026 World Cup fantasy draft — League 2.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0e1a",
+  "theme_color": "#0a0e1a",
+  "icons": [
+    { "src": "../favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
