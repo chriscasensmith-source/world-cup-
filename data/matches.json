@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-23T04:38:20.962Z",
-  "lastSynced": "2026-06-23T04:38:20.962Z",
+  "lastChecked": "2026-06-23T04:51:58.263Z",
+  "lastSynced": "2026-06-23T04:51:58.263Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -528,9 +528,9 @@
       "home": "Jordan",
       "away": "Algeria",
       "homeScore": 1,
-      "awayScore": 1,
+      "awayScore": 2,
       "status": "IN_PLAY",
-      "winner": null
+      "winner": "Algeria"
     },
     {
       "id": "fd-537405",
