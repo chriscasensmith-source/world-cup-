@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-23T18:56:38.772Z",
-  "lastSynced": "2026-06-23T18:56:38.772Z",
+  "lastChecked": "2026-06-23T19:05:44.439Z",
+  "lastSynced": "2026-06-23T19:05:44.439Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -541,7 +541,7 @@
       "away": "Uzbekistan",
       "homeScore": 5,
       "awayScore": 0,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "winner": "Portugal"
     },
     {
