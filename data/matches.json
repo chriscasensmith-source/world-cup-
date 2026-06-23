@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-23T00:06:27.707Z",
-  "lastSynced": "2026-06-23T00:06:27.707Z",
+  "lastChecked": "2026-06-23T00:07:59.869Z",
+  "lastSynced": "2026-06-23T00:07:59.869Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -505,7 +505,7 @@
       "away": "Iraq",
       "homeScore": 1,
       "awayScore": 0,
-      "status": "PAUSED",
+      "status": "IN_PLAY",
       "winner": "France"
     },
     {
