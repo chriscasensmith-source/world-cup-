@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-23T04:58:03.475Z",
-  "lastSynced": "2026-06-23T04:58:03.475Z",
+  "lastChecked": "2026-06-23T05:07:08.738Z",
+  "lastSynced": "2026-06-23T05:07:08.738Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -529,7 +529,7 @@
       "away": "Algeria",
       "homeScore": 1,
       "awayScore": 2,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "winner": "Algeria"
     },
     {
