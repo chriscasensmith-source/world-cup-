@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-23T21:54:27.135Z",
-  "lastSynced": "2026-06-23T21:54:27.135Z",
+  "lastChecked": "2026-06-23T22:06:34.980Z",
+  "lastSynced": "2026-06-23T22:06:34.980Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -553,7 +553,7 @@
       "away": "Ghana",
       "homeScore": 0,
       "awayScore": 0,
-      "status": "SCHEDULED",
+      "status": "FINISHED",
       "winner": null
     },
     {
