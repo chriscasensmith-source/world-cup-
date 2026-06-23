@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-23T23:05:31.788Z",
-  "lastSynced": "2026-06-23T23:05:31.788Z",
+  "lastChecked": "2026-06-23T23:53:56.416Z",
+  "lastSynced": "2026-06-23T23:53:56.416Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -565,7 +565,7 @@
       "away": "Croatia",
       "homeScore": 0,
       "awayScore": 0,
-      "status": "SCHEDULED",
+      "status": "PAUSED",
       "winner": null
     },
     {
