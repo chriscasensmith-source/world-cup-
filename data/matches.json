@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-23T01:57:21.772Z",
-  "lastSynced": "2026-06-23T01:57:21.772Z",
+  "lastChecked": "2026-06-23T01:58:53.665Z",
+  "lastSynced": "2026-06-23T01:58:53.665Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -516,8 +516,8 @@
       "home": "Norway",
       "away": "Senegal",
       "homeScore": 3,
-      "awayScore": 1,
-      "status": "IN_PLAY",
+      "awayScore": 2,
+      "status": "PAUSED",
       "winner": "Norway"
     },
     {
