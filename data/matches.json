@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-24T19:39:50.187Z",
-  "lastSynced": "2026-06-24T19:39:50.187Z",
+  "lastChecked": "2026-06-24T19:48:55.214Z",
+  "lastSynced": "2026-06-24T19:48:55.214Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -600,7 +600,7 @@
       "home": "Bosnia & Herzegovina",
       "away": "Qatar",
       "homeScore": 2,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "IN_PLAY",
       "winner": "Bosnia & Herzegovina"
     },
