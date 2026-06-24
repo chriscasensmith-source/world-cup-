@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-24T02:01:08.472Z",
-  "lastSynced": "2026-06-24T02:01:08.472Z",
+  "lastChecked": "2026-06-24T02:05:41.401Z",
+  "lastSynced": "2026-06-24T02:05:41.401Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -575,8 +575,8 @@
       "date": "2026-06-24",
       "home": "Colombia",
       "away": "DR Congo",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 0,
+      "awayScore": 0,
       "status": "SCHEDULED",
       "winner": null
     },
