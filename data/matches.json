@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-24T19:48:55.214Z",
-  "lastSynced": "2026-06-24T19:48:55.214Z",
+  "lastChecked": "2026-06-24T19:54:59.069Z",
+  "lastSynced": "2026-06-24T19:54:59.069Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -589,7 +589,7 @@
       "away": "Canada",
       "homeScore": 0,
       "awayScore": 0,
-      "status": "IN_PLAY",
+      "status": "PAUSED",
       "winner": null
     },
     {
