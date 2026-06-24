@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-24T21:28:37.173Z",
-  "lastSynced": "2026-06-24T21:28:37.173Z",
+  "lastChecked": "2026-06-24T22:06:24.560Z",
+  "lastSynced": "2026-06-24T22:06:24.560Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -611,8 +611,8 @@
       "date": "2026-06-24",
       "home": "Morocco",
       "away": "Haiti",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 0,
+      "awayScore": 0,
       "status": "SCHEDULED",
       "winner": null
     },
@@ -623,8 +623,8 @@
       "date": "2026-06-24",
       "home": "Scotland",
       "away": "Brazil",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 0,
+      "awayScore": 0,
       "status": "SCHEDULED",
       "winner": null
     },
