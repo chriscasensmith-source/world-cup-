@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-24T00:09:12.461Z",
-  "lastSynced": "2026-06-24T00:09:12.461Z",
+  "lastChecked": "2026-06-24T00:18:16.865Z",
+  "lastSynced": "2026-06-24T00:18:16.865Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -564,9 +564,9 @@
       "home": "Panama",
       "away": "Croatia",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "SCHEDULED",
-      "winner": null
+      "winner": "Croatia"
     },
     {
       "id": "fd-537406",
