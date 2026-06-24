@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-24T20:20:53.122Z",
-  "lastSynced": "2026-06-24T20:20:53.122Z",
+  "lastChecked": "2026-06-24T20:40:32.069Z",
+  "lastSynced": "2026-06-24T20:40:32.069Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -588,7 +588,7 @@
       "home": "Switzerland",
       "away": "Canada",
       "homeScore": 2,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "IN_PLAY",
       "winner": "Switzerland"
     },
