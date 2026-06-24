@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-24T22:06:24.560Z",
-  "lastSynced": "2026-06-24T22:06:24.560Z",
+  "lastChecked": "2026-06-24T22:13:59.133Z",
+  "lastSynced": "2026-06-24T22:13:59.133Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -624,9 +624,9 @@
       "home": "Scotland",
       "away": "Brazil",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "SCHEDULED",
-      "winner": null
+      "winner": "Brazil"
     },
     {
       "id": "fd-537331",
