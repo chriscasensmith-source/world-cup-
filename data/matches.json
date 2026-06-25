@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-25T22:02:45.138Z",
-  "lastSynced": "2026-06-25T22:02:45.138Z",
+  "lastChecked": "2026-06-25T22:04:16.920Z",
+  "lastSynced": "2026-06-25T22:04:16.920Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -661,7 +661,7 @@
       "away": "Germany",
       "homeScore": 2,
       "awayScore": 1,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "winner": "Ecuador"
     },
     {
