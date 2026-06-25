@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-25T01:12:53.115Z",
-  "lastSynced": "2026-06-25T01:12:53.115Z",
+  "lastChecked": "2026-06-25T01:15:55.601Z",
+  "lastSynced": "2026-06-25T01:15:55.601Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -635,9 +635,9 @@
       "date": "2026-06-25",
       "home": "Czechia",
       "away": "Mexico",
-      "homeScore": 0,
-      "awayScore": 0,
-      "status": "IN_PLAY",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
       "winner": null
     },
     {
@@ -647,9 +647,9 @@
       "date": "2026-06-25",
       "home": "South Africa",
       "away": "South Korea",
-      "homeScore": 0,
-      "awayScore": 0,
-      "status": "IN_PLAY",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
       "winner": null
     },
     {
