@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-25T02:55:50.489Z",
-  "lastSynced": "2026-06-25T02:55:50.489Z",
+  "lastChecked": "2026-06-25T03:00:24.206Z",
+  "lastSynced": "2026-06-25T03:00:24.206Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -636,7 +636,7 @@
       "home": "Czechia",
       "away": "Mexico",
       "homeScore": 0,
-      "awayScore": 2,
+      "awayScore": 3,
       "status": "IN_PLAY",
       "winner": "Mexico"
     },
