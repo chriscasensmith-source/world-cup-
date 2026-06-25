@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-24T23:57:07.557Z",
-  "lastSynced": "2026-06-24T23:57:07.557Z",
+  "lastChecked": "2026-06-25T00:06:14.907Z",
+  "lastSynced": "2026-06-25T00:06:14.907Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -613,7 +613,7 @@
       "away": "Haiti",
       "homeScore": 4,
       "awayScore": 2,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "winner": "Morocco"
     },
     {
