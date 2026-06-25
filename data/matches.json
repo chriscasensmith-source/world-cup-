@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-25T20:50:27.269Z",
-  "lastSynced": "2026-06-25T20:50:27.269Z",
+  "lastChecked": "2026-06-25T20:51:59.463Z",
+  "lastSynced": "2026-06-25T20:51:59.463Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -659,8 +659,8 @@
       "date": "2026-06-25",
       "home": "Ecuador",
       "away": "Germany",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 1,
+      "awayScore": 1,
       "status": "SCHEDULED",
       "winner": null
     },
@@ -671,10 +671,10 @@
       "date": "2026-06-25",
       "home": "Curaçao",
       "away": "Ivory Coast",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 0,
+      "awayScore": 1,
       "status": "SCHEDULED",
-      "winner": null
+      "winner": "Ivory Coast"
     },
     {
       "id": "fd-537361",
