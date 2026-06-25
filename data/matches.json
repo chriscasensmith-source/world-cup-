@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-25T23:06:22.115Z",
-  "lastSynced": "2026-06-25T23:06:22.115Z",
+  "lastChecked": "2026-06-25T23:07:53.903Z",
+  "lastSynced": "2026-06-25T23:07:53.903Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -684,9 +684,9 @@
       "home": "Tunisia",
       "away": "Netherlands",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "IN_PLAY",
-      "winner": null
+      "winner": "Netherlands"
     },
     {
       "id": "fd-537362",
