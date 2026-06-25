@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-25T20:07:54.207Z",
-  "lastSynced": "2026-06-25T20:07:54.207Z",
+  "lastChecked": "2026-06-25T20:12:28.221Z",
+  "lastSynced": "2026-06-25T20:12:28.221Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -672,9 +672,9 @@
       "home": "Curaçao",
       "away": "Ivory Coast",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "SCHEDULED",
-      "winner": null
+      "winner": "Ivory Coast"
     },
     {
       "id": "fd-537361",
