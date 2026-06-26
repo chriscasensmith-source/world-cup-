@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-26T02:57:19.886Z",
-  "lastSynced": "2026-06-26T02:57:19.886Z",
+  "lastChecked": "2026-06-26T03:13:57.984Z",
+  "lastSynced": "2026-06-26T03:13:57.984Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -709,7 +709,7 @@
       "away": "USA",
       "homeScore": 2,
       "awayScore": 1,
-      "status": "PAUSED",
+      "status": "SCHEDULED",
       "winner": "Türkiye"
     },
     {
@@ -721,7 +721,7 @@
       "away": "Australia",
       "homeScore": 0,
       "awayScore": 0,
-      "status": "PAUSED",
+      "status": "SCHEDULED",
       "winner": null
     },
     {
