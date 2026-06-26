@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-26T02:06:56.344Z",
-  "lastSynced": "2026-06-26T02:06:56.344Z",
+  "lastChecked": "2026-06-26T02:08:27.974Z",
+  "lastSynced": "2026-06-26T02:08:27.974Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -708,9 +708,9 @@
       "home": "Türkiye",
       "away": "USA",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "IN_PLAY",
-      "winner": null
+      "winner": "USA"
     },
     {
       "id": "fd-537350",
