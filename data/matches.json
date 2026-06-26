@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-26T04:07:05.283Z",
-  "lastSynced": "2026-06-26T04:07:05.283Z",
+  "lastChecked": "2026-06-26T04:08:36.931Z",
+  "lastSynced": "2026-06-26T04:08:36.931Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -709,7 +709,7 @@
       "away": "USA",
       "homeScore": 3,
       "awayScore": 2,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "winner": "Türkiye"
     },
     {
