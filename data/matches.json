@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-26T04:14:42.895Z",
-  "lastSynced": "2026-06-26T04:14:42.895Z",
+  "lastChecked": "2026-06-26T04:16:14.514Z",
+  "lastSynced": "2026-06-26T04:16:14.514Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -659,10 +659,10 @@
       "date": "2026-06-25",
       "home": "Ecuador",
       "away": "Germany",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "winner": "Ecuador"
     },
     {
       "id": "fd-537356",
@@ -671,10 +671,10 @@
       "date": "2026-06-25",
       "home": "Curaçao",
       "away": "Ivory Coast",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
+      "homeScore": 0,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "winner": "Ivory Coast"
     },
     {
       "id": "fd-537361",
@@ -683,10 +683,10 @@
       "date": "2026-06-25",
       "home": "Tunisia",
       "away": "Netherlands",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
+      "homeScore": 1,
+      "awayScore": 3,
+      "status": "FINISHED",
+      "winner": "Netherlands"
     },
     {
       "id": "fd-537362",
@@ -695,9 +695,9 @@
       "date": "2026-06-25",
       "home": "Japan",
       "away": "Sweden",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FINISHED",
       "winner": null
     },
     {
@@ -707,10 +707,10 @@
       "date": "2026-06-26",
       "home": "Türkiye",
       "away": "USA",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
+      "homeScore": 3,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "winner": "Türkiye"
     },
     {
       "id": "fd-537350",
@@ -719,9 +719,9 @@
       "date": "2026-06-26",
       "home": "Paraguay",
       "away": "Australia",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "FINISHED",
       "winner": null
     },
     {
