@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-26T02:03:53.119Z",
-  "lastSynced": "2026-06-26T02:03:53.119Z",
+  "lastChecked": "2026-06-26T02:05:24.768Z",
+  "lastSynced": "2026-06-26T02:05:24.768Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -35,8 +35,8 @@
       "date": "2026-06-12",
       "home": "Canada",
       "away": "Bosnia & Herzegovina",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 1,
+      "awayScore": 1,
       "status": "FINISHED",
       "winner": null
     },
@@ -707,8 +707,8 @@
       "date": "2026-06-26",
       "home": "Türkiye",
       "away": "USA",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 0,
+      "awayScore": 0,
       "status": "SCHEDULED",
       "winner": null
     },
@@ -719,8 +719,8 @@
       "date": "2026-06-26",
       "home": "Paraguay",
       "away": "Australia",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 0,
+      "awayScore": 0,
       "status": "SCHEDULED",
       "winner": null
     },
