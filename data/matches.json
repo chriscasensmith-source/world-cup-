@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-26T00:26:50.988Z",
-  "lastSynced": "2026-06-26T00:26:50.988Z",
+  "lastChecked": "2026-06-26T00:28:22.770Z",
+  "lastSynced": "2026-06-26T00:28:22.770Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -659,10 +659,10 @@
       "date": "2026-06-25",
       "home": "Ecuador",
       "away": "Germany",
-      "homeScore": 2,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "winner": "Ecuador"
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "winner": null
     },
     {
       "id": "fd-537356",
@@ -671,10 +671,10 @@
       "date": "2026-06-25",
       "home": "Curaçao",
       "away": "Ivory Coast",
-      "homeScore": 0,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "winner": "Ivory Coast"
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "winner": null
     },
     {
       "id": "fd-537361",
@@ -683,10 +683,10 @@
       "date": "2026-06-25",
       "home": "Tunisia",
       "away": "Netherlands",
-      "homeScore": 1,
-      "awayScore": 3,
-      "status": "IN_PLAY",
-      "winner": "Netherlands"
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "winner": null
     },
     {
       "id": "fd-537362",
@@ -695,10 +695,10 @@
       "date": "2026-06-25",
       "home": "Japan",
       "away": "Sweden",
-      "homeScore": 1,
-      "awayScore": 0,
-      "status": "IN_PLAY",
-      "winner": "Japan"
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "winner": null
     },
     {
       "id": "fd-537349",
