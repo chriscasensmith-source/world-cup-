@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-27T23:33:57.448Z",
-  "lastSynced": "2026-06-27T23:33:57.448Z",
+  "lastChecked": "2026-06-27T23:37:00.632Z",
+  "lastSynced": "2026-06-27T23:37:00.632Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -827,8 +827,8 @@
       "date": "2026-06-27",
       "home": "Colombia",
       "away": "Portugal",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 0,
+      "awayScore": 0,
       "status": "SCHEDULED",
       "winner": null
     },
@@ -839,8 +839,8 @@
       "date": "2026-06-27",
       "home": "DR Congo",
       "away": "Uzbekistan",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 0,
+      "awayScore": 0,
       "status": "SCHEDULED",
       "winner": null
     },
