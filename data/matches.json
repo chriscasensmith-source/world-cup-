@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-27T03:16:47.706Z",
-  "lastSynced": "2026-06-27T03:16:47.706Z",
+  "lastChecked": "2026-06-27T03:19:49.979Z",
+  "lastSynced": "2026-06-27T03:19:49.979Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -792,9 +792,9 @@
       "home": "Egypt",
       "away": "Iran",
       "homeScore": 1,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "IN_PLAY",
-      "winner": "Egypt"
+      "winner": null
     },
     {
       "id": "fd-537413",
