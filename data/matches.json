@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-27T05:06:11.795Z",
-  "lastSynced": "2026-06-27T05:06:11.795Z",
+  "lastChecked": "2026-06-27T05:09:13.988Z",
+  "lastSynced": "2026-06-27T05:09:13.988Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -793,7 +793,7 @@
       "away": "Iran",
       "homeScore": 1,
       "awayScore": 2,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "winner": "Iran"
     },
     {
