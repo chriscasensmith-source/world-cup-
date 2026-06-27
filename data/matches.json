@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-27T02:18:02.126Z",
-  "lastSynced": "2026-06-27T02:18:02.126Z",
+  "lastChecked": "2026-06-27T02:21:04.711Z",
+  "lastSynced": "2026-06-27T02:21:04.711Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -731,10 +731,10 @@
       "date": "2026-06-26",
       "home": "Norway",
       "away": "France",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
+      "homeScore": 1,
+      "awayScore": 4,
+      "status": "FINISHED",
+      "winner": "France"
     },
     {
       "id": "fd-537396",
@@ -743,10 +743,10 @@
       "date": "2026-06-26",
       "home": "Senegal",
       "away": "Iraq",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
+      "homeScore": 5,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "winner": "Senegal"
     },
     {
       "id": "fd-537373",
