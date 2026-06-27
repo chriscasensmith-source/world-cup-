@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-27T03:04:34.914Z",
-  "lastSynced": "2026-06-27T03:04:34.914Z",
+  "lastChecked": "2026-06-27T03:06:06.545Z",
+  "lastSynced": "2026-06-27T03:06:06.545Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -779,9 +779,9 @@
       "date": "2026-06-27",
       "home": "New Zealand",
       "away": "Belgium",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "IN_PLAY",
       "winner": null
     },
     {
@@ -791,9 +791,9 @@
       "date": "2026-06-27",
       "home": "Egypt",
       "away": "Iran",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "IN_PLAY",
       "winner": null
     },
     {
