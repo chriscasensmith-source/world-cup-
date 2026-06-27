@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-27T03:33:28.996Z",
-  "lastSynced": "2026-06-27T03:33:28.996Z",
+  "lastChecked": "2026-06-27T03:35:00.577Z",
+  "lastSynced": "2026-06-27T03:35:00.577Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -780,9 +780,9 @@
       "home": "New Zealand",
       "away": "Belgium",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "SCHEDULED",
-      "winner": null
+      "winner": "Belgium"
     },
     {
       "id": "fd-537368",
