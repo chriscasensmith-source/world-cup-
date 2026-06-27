@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-27T22:28:23.476Z",
-  "lastSynced": "2026-06-27T22:28:23.476Z",
+  "lastChecked": "2026-06-27T22:31:26.455Z",
+  "lastSynced": "2026-06-27T22:31:26.455Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -804,7 +804,7 @@
       "home": "Panama",
       "away": "England",
       "homeScore": 0,
-      "awayScore": 1,
+      "awayScore": 2,
       "status": "IN_PLAY",
       "winner": "England"
     },
