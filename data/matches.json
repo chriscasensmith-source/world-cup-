@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-27T11:57:17.470Z",
-  "lastSynced": "2026-06-27T11:57:17.470Z",
+  "lastChecked": "2026-06-27T12:01:51.458Z",
+  "lastSynced": "2026-06-27T12:01:51.458Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -863,54 +863,6 @@
       "date": "2026-06-28",
       "home": "Algeria",
       "away": "Austria",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
-    },
-    {
-      "id": "fd-537417",
-      "stage": "R32",
-      "group": null,
-      "date": "2026-06-28",
-      "home": "South Africa",
-      "away": "Canada",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
-    },
-    {
-      "id": "fd-537423",
-      "stage": "R32",
-      "group": null,
-      "date": "2026-06-29",
-      "home": "Brazil",
-      "away": "Japan",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
-    },
-    {
-      "id": "fd-537418",
-      "stage": "R32",
-      "group": null,
-      "date": "2026-06-30",
-      "home": "Netherlands",
-      "away": "Morocco",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
-    },
-    {
-      "id": "fd-537421",
-      "stage": "R32",
-      "group": null,
-      "date": "2026-07-02",
-      "home": "USA",
-      "away": "Bosnia & Herzegovina",
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
