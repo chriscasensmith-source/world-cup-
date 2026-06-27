@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-27T23:00:26.837Z",
-  "lastSynced": "2026-06-27T23:00:26.837Z",
+  "lastChecked": "2026-06-27T23:05:00.716Z",
+  "lastSynced": "2026-06-27T23:05:00.716Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -817,7 +817,7 @@
       "away": "Ghana",
       "homeScore": 2,
       "awayScore": 1,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "winner": "Croatia"
     },
     {
