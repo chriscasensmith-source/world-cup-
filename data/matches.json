@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-27T06:20:37.920Z",
-  "lastSynced": "2026-06-27T06:20:37.920Z",
+  "lastChecked": "2026-06-27T06:22:09.623Z",
+  "lastSynced": "2026-06-27T06:22:09.623Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -731,10 +731,10 @@
       "date": "2026-06-26",
       "home": "Norway",
       "away": "France",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
+      "homeScore": 1,
+      "awayScore": 4,
+      "status": "FINISHED",
+      "winner": "France"
     },
     {
       "id": "fd-537396",
@@ -743,10 +743,10 @@
       "date": "2026-06-26",
       "home": "Senegal",
       "away": "Iraq",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
+      "homeScore": 5,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "winner": "Senegal"
     },
     {
       "id": "fd-537373",
@@ -792,9 +792,9 @@
       "home": "Egypt",
       "away": "Iran",
       "homeScore": 1,
-      "awayScore": 2,
+      "awayScore": 1,
       "status": "FINISHED",
-      "winner": "Iran"
+      "winner": null
     },
     {
       "id": "fd-537413",
@@ -863,54 +863,6 @@
       "date": "2026-06-28",
       "home": "Algeria",
       "away": "Austria",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
-    },
-    {
-      "id": "fd-537417",
-      "stage": "R32",
-      "group": null,
-      "date": "2026-06-28",
-      "home": "South Africa",
-      "away": "Canada",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
-    },
-    {
-      "id": "fd-537423",
-      "stage": "R32",
-      "group": null,
-      "date": "2026-06-29",
-      "home": "Brazil",
-      "away": "Japan",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
-    },
-    {
-      "id": "fd-537418",
-      "stage": "R32",
-      "group": null,
-      "date": "2026-06-30",
-      "home": "Netherlands",
-      "away": "Morocco",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
-    },
-    {
-      "id": "fd-537421",
-      "stage": "R32",
-      "group": null,
-      "date": "2026-07-02",
-      "home": "USA",
-      "away": "Bosnia & Herzegovina",
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
