@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-28T06:10:21.364Z",
-  "lastSynced": "2026-06-28T06:10:21.364Z",
+  "lastChecked": "2026-06-28T06:11:53.574Z",
+  "lastSynced": "2026-06-28T06:11:53.574Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -803,10 +803,10 @@
       "date": "2026-06-27",
       "home": "Panama",
       "away": "England",
-      "homeScore": 0,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "winner": "England"
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "winner": null
     },
     {
       "id": "fd-537414",
@@ -815,10 +815,10 @@
       "date": "2026-06-27",
       "home": "Croatia",
       "away": "Ghana",
-      "homeScore": 2,
-      "awayScore": 1,
-      "status": "FINISHED",
-      "winner": "Croatia"
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "winner": null
     },
     {
       "id": "fd-537407",
