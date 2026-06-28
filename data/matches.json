@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-28T03:59:08.159Z",
-  "lastSynced": "2026-06-28T03:59:08.159Z",
+  "lastChecked": "2026-06-28T04:00:40.540Z",
+  "lastSynced": "2026-06-28T04:00:40.540Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -863,10 +863,10 @@
       "date": "2026-06-28",
       "home": "Algeria",
       "away": "Austria",
-      "homeScore": 2,
+      "homeScore": 3,
       "awayScore": 2,
       "status": "IN_PLAY",
-      "winner": null
+      "winner": "Algeria"
     }
   ]
 }
