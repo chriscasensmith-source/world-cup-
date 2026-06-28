@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-28T04:02:12.916Z",
-  "lastSynced": "2026-06-28T04:02:12.916Z",
+  "lastChecked": "2026-06-28T04:03:45.289Z",
+  "lastSynced": "2026-06-28T04:03:45.289Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -853,7 +853,7 @@
       "away": "Argentina",
       "homeScore": 1,
       "awayScore": 3,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "winner": "Argentina"
     },
     {
@@ -864,9 +864,9 @@
       "home": "Algeria",
       "away": "Austria",
       "homeScore": 3,
-      "awayScore": 2,
+      "awayScore": 3,
       "status": "IN_PLAY",
-      "winner": "Algeria"
+      "winner": null
     },
     {
       "id": "fd-537417",
