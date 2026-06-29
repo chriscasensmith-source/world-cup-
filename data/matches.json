@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-29T19:02:11.183Z",
-  "lastSynced": "2026-06-29T19:02:11.183Z",
+  "lastChecked": "2026-06-29T19:08:15.687Z",
+  "lastSynced": "2026-06-29T19:08:15.687Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -889,7 +889,7 @@
       "away": "Japan",
       "homeScore": 2,
       "awayScore": 1,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "winner": "Brazil"
     },
     {
