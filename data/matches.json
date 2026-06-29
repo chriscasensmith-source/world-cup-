@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-29T22:59:58.331Z",
-  "lastSynced": "2026-06-29T22:59:58.331Z",
+  "lastChecked": "2026-06-29T23:22:42.940Z",
+  "lastSynced": "2026-06-29T23:22:42.940Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -901,7 +901,7 @@
       "away": "Paraguay",
       "homeScore": 2,
       "awayScore": 1,
-      "status": "PAUSED",
+      "status": "FINISHED",
       "winner": "Germany"
     },
     {
