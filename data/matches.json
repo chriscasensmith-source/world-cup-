@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-29T21:53:20.631Z",
-  "lastSynced": "2026-06-29T21:53:20.631Z",
+  "lastChecked": "2026-06-29T22:34:13.684Z",
+  "lastSynced": "2026-06-29T22:34:13.684Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -901,7 +901,7 @@
       "away": "Paraguay",
       "homeScore": 1,
       "awayScore": 1,
-      "status": "IN_PLAY",
+      "status": "PAUSED",
       "winner": null
     },
     {
