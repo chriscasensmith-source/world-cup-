@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-30T04:21:53.987Z",
-  "lastSynced": "2026-06-30T04:21:53.987Z",
+  "lastChecked": "2026-06-30T04:23:25.718Z",
+  "lastSynced": "2026-06-30T04:23:25.718Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -911,7 +911,7 @@
       "date": "2026-06-30",
       "home": "Netherlands",
       "away": "Morocco",
-      "homeScore": 3,
+      "homeScore": 4,
       "awayScore": 4,
       "status": "FINISHED",
       "winner": null
