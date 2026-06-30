@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-30T17:06:58.954Z",
-  "lastSynced": "2026-06-30T17:06:58.954Z",
+  "lastChecked": "2026-06-30T17:44:50.813Z",
+  "lastSynced": "2026-06-30T17:44:50.813Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -924,9 +924,9 @@
       "home": "Ivory Coast",
       "away": "Norway",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "IN_PLAY",
-      "winner": null
+      "winner": "Norway"
     },
     {
       "id": "fd-537416",
