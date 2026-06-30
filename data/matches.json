@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-30T06:05:16.877Z",
-  "lastSynced": "2026-06-30T06:05:16.877Z",
+  "lastChecked": "2026-06-30T06:06:48.667Z",
+  "lastSynced": "2026-06-30T06:06:48.667Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -902,7 +902,7 @@
       "homeScore": 4,
       "awayScore": 5,
       "status": "FINISHED",
-      "winner": null
+      "winner": "Paraguay"
     },
     {
       "id": "fd-537418",
@@ -914,7 +914,7 @@
       "homeScore": 3,
       "awayScore": 4,
       "status": "FINISHED",
-      "winner": null
+      "winner": "Morocco"
     },
     {
       "id": "fd-537424",
@@ -1055,6 +1055,18 @@
       "date": "2026-07-04",
       "home": "Colombia",
       "away": "Ghana",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "winner": null
+    },
+    {
+      "id": "fd-537376",
+      "stage": "R16",
+      "group": null,
+      "date": "2026-07-04",
+      "home": "Canada",
+      "away": "Morocco",
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
