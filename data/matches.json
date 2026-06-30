@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-06-30T22:05:30.250Z",
-  "lastSynced": "2026-06-30T22:05:30.250Z",
+  "lastChecked": "2026-06-30T22:10:07.723Z",
+  "lastSynced": "2026-06-30T22:10:07.723Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -937,7 +937,7 @@
       "away": "Sweden",
       "homeScore": 1,
       "awayScore": 0,
-      "status": "PAUSED",
+      "status": "SCHEDULED",
       "winner": "France"
     },
     {
