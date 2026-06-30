@@ -32,11 +32,23 @@
   let remote = { matches: [], lastSynced: null, source: "live", syncNote: "" };
 
   function liveMatches() {
-    return remote.matches.map(m => ({
-      ...m,
-      home: canonical(m.home),
-      away: canonical(m.away),
-    }));
+    return remote.matches.map(m => {
+      const home = canonical(m.home);
+      const away = canonical(m.away);
+      let winner = m.winner || null;
+      // The live feed sometimes leaves `winner` blank on a finished knockout
+      // tie that was settled on penalties (or any decisive result it hasn't
+      // tagged yet). Whenever a finished match isn't level on the score, the
+      // higher score advances — so credit that team with the win. (A truly
+      // level score with no winner stays a draw — we can't infer a shootout.)
+      if (!winner
+          && m.status === "FINISHED"
+          && Number.isFinite(m.homeScore) && Number.isFinite(m.awayScore)
+          && m.homeScore !== m.awayScore) {
+        winner = m.homeScore > m.awayScore ? home : away;
+      }
+      return { ...m, home, away, winner };
+    });
   }
 
   // ---- Standings -------------------------------------------------------
