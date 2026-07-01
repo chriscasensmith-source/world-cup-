@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-01T00:55:17.164Z",
-  "lastSynced": "2026-07-01T00:55:17.164Z",
+  "lastChecked": "2026-07-01T01:05:53.316Z",
+  "lastSynced": "2026-07-01T01:05:53.316Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -923,10 +923,10 @@
       "date": "2026-06-30",
       "home": "Ivory Coast",
       "away": "Norway",
-      "homeScore": 1,
-      "awayScore": 2,
-      "status": "FINISHED",
-      "winner": "Norway"
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "winner": null
     },
     {
       "id": "fd-537416",
@@ -947,9 +947,9 @@
       "date": "2026-07-01",
       "home": "Mexico",
       "away": "Ecuador",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "IN_PLAY",
       "winner": null
     },
     {
