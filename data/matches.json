@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-01T02:27:45.221Z",
-  "lastSynced": "2026-07-01T02:27:45.221Z",
+  "lastChecked": "2026-07-01T02:36:50.687Z",
+  "lastSynced": "2026-07-01T02:36:50.687Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -947,7 +947,7 @@
       "date": "2026-07-01",
       "home": "Mexico",
       "away": "Ecuador",
-      "homeScore": 1,
+      "homeScore": 2,
       "awayScore": 0,
       "status": "SCHEDULED",
       "winner": "Mexico"
