@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-01T16:05:49.643Z",
-  "lastSynced": "2026-07-01T16:05:49.643Z",
+  "lastChecked": "2026-07-01T16:13:25.108Z",
+  "lastSynced": "2026-07-01T16:13:25.108Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -960,9 +960,9 @@
       "home": "England",
       "away": "DR Congo",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "SCHEDULED",
-      "winner": null
+      "winner": "DR Congo"
     },
     {
       "id": "fd-537422",
