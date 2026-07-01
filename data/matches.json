@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-01T20:57:17.170Z",
-  "lastSynced": "2026-07-01T20:57:17.170Z",
+  "lastChecked": "2026-07-01T21:13:56.573Z",
+  "lastSynced": "2026-07-01T21:13:56.573Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -973,7 +973,7 @@
       "away": "Senegal",
       "homeScore": 0,
       "awayScore": 1,
-      "status": "PAUSED",
+      "status": "IN_PLAY",
       "winner": "Senegal"
     },
     {
