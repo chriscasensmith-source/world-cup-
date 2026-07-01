@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-01T20:07:17.208Z",
-  "lastSynced": "2026-07-01T20:07:17.208Z",
+  "lastChecked": "2026-07-01T20:29:59.330Z",
+  "lastSynced": "2026-07-01T20:29:59.330Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -972,9 +972,9 @@
       "home": "Belgium",
       "away": "Senegal",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "IN_PLAY",
-      "winner": null
+      "winner": "Senegal"
     },
     {
       "id": "fd-537421",
