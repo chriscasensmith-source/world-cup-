@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-02T00:49:49.994Z",
-  "lastSynced": "2026-07-02T00:49:49.994Z",
+  "lastChecked": "2026-07-02T01:00:27.674Z",
+  "lastSynced": "2026-07-02T01:00:27.674Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -985,7 +985,7 @@
       "away": "Bosnia & Herzegovina",
       "homeScore": 1,
       "awayScore": 0,
-      "status": "IN_PLAY",
+      "status": "PAUSED",
       "winner": "USA"
     },
     {
