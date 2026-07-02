@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-02T06:13:42.440Z",
-  "lastSynced": "2026-07-02T06:13:42.440Z",
+  "lastChecked": "2026-07-02T19:42:58.029Z",
+  "lastSynced": "2026-07-02T19:42:58.029Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -995,10 +995,10 @@
       "date": "2026-07-02",
       "home": "Spain",
       "away": "Austria",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 1,
+      "awayScore": 0,
       "status": "SCHEDULED",
-      "winner": null
+      "winner": "Spain"
     },
     {
       "id": "fd-537419",
