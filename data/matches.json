@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-03T00:11:46.577Z",
-  "lastSynced": "2026-07-03T00:11:46.577Z",
+  "lastChecked": "2026-07-03T00:19:21.107Z",
+  "lastSynced": "2026-07-03T00:19:21.107Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1008,9 +1008,9 @@
       "home": "Portugal",
       "away": "Croatia",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "IN_PLAY",
-      "winner": null
+      "winner": "Croatia"
     },
     {
       "id": "fd-537429",
