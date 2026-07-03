@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-03T03:16:19.716Z",
-  "lastSynced": "2026-07-03T03:16:19.716Z",
+  "lastChecked": "2026-07-03T03:55:44.274Z",
+  "lastSynced": "2026-07-03T03:55:44.274Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1021,7 +1021,7 @@
       "away": "Algeria",
       "homeScore": 1,
       "awayScore": 0,
-      "status": "IN_PLAY",
+      "status": "PAUSED",
       "winner": "Switzerland"
     },
     {
