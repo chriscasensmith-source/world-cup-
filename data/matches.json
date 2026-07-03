@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-03T01:22:59.586Z",
-  "lastSynced": "2026-07-03T01:22:59.586Z",
+  "lastChecked": "2026-07-03T03:05:40.980Z",
+  "lastSynced": "2026-07-03T03:05:40.980Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1019,8 +1019,8 @@
       "date": "2026-07-03",
       "home": "Switzerland",
       "away": "Algeria",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 0,
+      "awayScore": 0,
       "status": "SCHEDULED",
       "winner": null
     },
