@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-03T23:13:38.599Z",
-  "lastSynced": "2026-07-03T23:13:38.599Z",
+  "lastChecked": "2026-07-03T23:25:45.480Z",
+  "lastSynced": "2026-07-03T23:25:45.480Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1044,9 +1044,9 @@
       "home": "Argentina",
       "away": "Cape Verde",
       "homeScore": 1,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "IN_PLAY",
-      "winner": "Argentina"
+      "winner": null
     },
     {
       "id": "fd-537430",
