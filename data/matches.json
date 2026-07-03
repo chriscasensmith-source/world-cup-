@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-03T19:22:38.737Z",
-  "lastSynced": "2026-07-03T19:22:38.737Z",
+  "lastChecked": "2026-07-03T20:03:34.430Z",
+  "lastSynced": "2026-07-03T20:03:34.430Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1033,7 +1033,7 @@
       "away": "Egypt",
       "homeScore": 1,
       "awayScore": 1,
-      "status": "IN_PLAY",
+      "status": "PAUSED",
       "winner": null
     },
     {
