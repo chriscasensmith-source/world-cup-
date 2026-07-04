@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-04T03:38:10.705Z",
-  "lastSynced": "2026-07-04T03:38:10.705Z",
+  "lastChecked": "2026-07-04T03:45:44.770Z",
+  "lastSynced": "2026-07-04T03:45:44.770Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1055,7 +1055,7 @@
       "date": "2026-07-04",
       "home": "Colombia",
       "away": "Ghana",
-      "homeScore": 2,
+      "homeScore": 1,
       "awayScore": 0,
       "status": "FINISHED",
       "winner": "Colombia"
