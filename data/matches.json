@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-04T22:15:54.622Z",
-  "lastSynced": "2026-07-04T22:15:54.622Z",
+  "lastChecked": "2026-07-04T22:38:38.707Z",
+  "lastSynced": "2026-07-04T22:38:38.707Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1080,9 +1080,9 @@
       "home": "Paraguay",
       "away": "France",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "IN_PLAY",
-      "winner": null
+      "winner": "France"
     },
     {
       "id": "fd-537377",
