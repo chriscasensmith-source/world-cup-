@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-04T18:21:15.317Z",
-  "lastSynced": "2026-07-04T18:21:15.317Z",
+  "lastChecked": "2026-07-04T18:51:32.670Z",
+  "lastSynced": "2026-07-04T18:51:32.670Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1068,7 +1068,7 @@
       "home": "Canada",
       "away": "Morocco",
       "homeScore": 0,
-      "awayScore": 1,
+      "awayScore": 2,
       "status": "IN_PLAY",
       "winner": "Morocco"
     },
