@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-04T17:06:54.582Z",
-  "lastSynced": "2026-07-04T17:06:54.582Z",
+  "lastChecked": "2026-07-04T17:59:57.889Z",
+  "lastSynced": "2026-07-04T17:59:57.889Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1069,7 +1069,7 @@
       "away": "Morocco",
       "homeScore": 0,
       "awayScore": 0,
-      "status": "IN_PLAY",
+      "status": "PAUSED",
       "winner": null
     },
     {
