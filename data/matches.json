@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-04T06:07:49.831Z",
-  "lastSynced": "2026-07-04T06:07:49.831Z",
+  "lastChecked": "2026-07-04T06:09:21.372Z",
+  "lastSynced": "2026-07-04T06:09:21.372Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1034,7 +1034,7 @@
       "homeScore": 3,
       "awayScore": 5,
       "status": "FINISHED",
-      "winner": null
+      "winner": "Egypt"
     },
     {
       "id": "fd-537427",
@@ -1109,12 +1109,48 @@
       "winner": null
     },
     {
+      "id": "fd-537379",
+      "stage": "R16",
+      "group": null,
+      "date": "2026-07-06",
+      "home": "Portugal",
+      "away": "Spain",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "winner": null
+    },
+    {
       "id": "fd-537380",
       "stage": "R16",
       "group": null,
       "date": "2026-07-07",
       "home": "USA",
       "away": "Belgium",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "winner": null
+    },
+    {
+      "id": "fd-537381",
+      "stage": "R16",
+      "group": null,
+      "date": "2026-07-07",
+      "home": "Argentina",
+      "away": "Egypt",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "winner": null
+    },
+    {
+      "id": "fd-537382",
+      "stage": "R16",
+      "group": null,
+      "date": "2026-07-07",
+      "home": "Switzerland",
+      "away": "Colombia",
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
