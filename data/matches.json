@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-05T21:13:07.415Z",
-  "lastSynced": "2026-07-05T21:13:07.415Z",
+  "lastChecked": "2026-07-05T21:47:57.897Z",
+  "lastSynced": "2026-07-05T21:47:57.897Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1092,9 +1092,9 @@
       "home": "Brazil",
       "away": "Norway",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "SCHEDULED",
-      "winner": null
+      "winner": "Norway"
     },
     {
       "id": "fd-537378",
