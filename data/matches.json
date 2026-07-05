@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-05T06:11:16.629Z",
-  "lastSynced": "2026-07-05T06:11:16.629Z",
+  "lastChecked": "2026-07-05T06:12:48.358Z",
+  "lastSynced": "2026-07-05T06:12:48.358Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1081,7 +1081,7 @@
       "away": "France",
       "homeScore": 0,
       "awayScore": 1,
-      "status": "SCHEDULED",
+      "status": "FINISHED",
       "winner": "France"
     },
     {
@@ -1151,6 +1151,18 @@
       "date": "2026-07-07",
       "home": "Switzerland",
       "away": "Colombia",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "winner": null
+    },
+    {
+      "id": "fd-537383",
+      "stage": "QF",
+      "group": null,
+      "date": "2026-07-09",
+      "home": "France",
+      "away": "Morocco",
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
