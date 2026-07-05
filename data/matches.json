@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-05T11:16:20.511Z",
-  "lastSynced": "2026-07-05T11:16:20.511Z",
+  "lastChecked": "2026-07-05T11:17:52.280Z",
+  "lastSynced": "2026-07-05T11:17:52.280Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1034,7 +1034,7 @@
       "homeScore": 3,
       "awayScore": 5,
       "status": "FINISHED",
-      "winner": null
+      "winner": "Egypt"
     },
     {
       "id": "fd-537427",
@@ -1067,10 +1067,10 @@
       "date": "2026-07-04",
       "home": "Canada",
       "away": "Morocco",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
+      "homeScore": 0,
+      "awayScore": 3,
+      "status": "FINISHED",
+      "winner": "Morocco"
     },
     {
       "id": "fd-537375",
@@ -1079,10 +1079,10 @@
       "date": "2026-07-04",
       "home": "Paraguay",
       "away": "France",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "SCHEDULED",
-      "winner": null
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "winner": "France"
     },
     {
       "id": "fd-537377",
@@ -1109,12 +1109,60 @@
       "winner": null
     },
     {
+      "id": "fd-537379",
+      "stage": "R16",
+      "group": null,
+      "date": "2026-07-06",
+      "home": "Portugal",
+      "away": "Spain",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "winner": null
+    },
+    {
       "id": "fd-537380",
       "stage": "R16",
       "group": null,
       "date": "2026-07-07",
       "home": "USA",
       "away": "Belgium",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "winner": null
+    },
+    {
+      "id": "fd-537381",
+      "stage": "R16",
+      "group": null,
+      "date": "2026-07-07",
+      "home": "Argentina",
+      "away": "Egypt",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "winner": null
+    },
+    {
+      "id": "fd-537382",
+      "stage": "R16",
+      "group": null,
+      "date": "2026-07-07",
+      "home": "Switzerland",
+      "away": "Colombia",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "winner": null
+    },
+    {
+      "id": "fd-537383",
+      "stage": "QF",
+      "group": null,
+      "date": "2026-07-09",
+      "home": "France",
+      "away": "Morocco",
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
