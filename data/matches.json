@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-06T01:06:25.640Z",
-  "lastSynced": "2026-07-06T01:06:25.640Z",
+  "lastChecked": "2026-07-06T01:42:50.515Z",
+  "lastSynced": "2026-07-06T01:42:50.515Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1104,9 +1104,9 @@
       "home": "Mexico",
       "away": "England",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "IN_PLAY",
-      "winner": null
+      "winner": "England"
     },
     {
       "id": "fd-537379",
