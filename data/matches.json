@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-07T17:48:58.523Z",
-  "lastSynced": "2026-07-07T17:48:58.523Z",
+  "lastChecked": "2026-07-07T17:53:32.255Z",
+  "lastSynced": "2026-07-07T17:53:32.255Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1139,10 +1139,10 @@
       "date": "2026-07-07",
       "home": "Argentina",
       "away": "Egypt",
-      "homeScore": 1,
+      "homeScore": 2,
       "awayScore": 2,
       "status": "IN_PLAY",
-      "winner": "Egypt"
+      "winner": null
     },
     {
       "id": "fd-537382",
