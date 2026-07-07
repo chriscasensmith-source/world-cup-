@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-07T00:15:19.232Z",
-  "lastSynced": "2026-07-07T00:15:19.232Z",
+  "lastChecked": "2026-07-07T00:36:34.509Z",
+  "lastSynced": "2026-07-07T00:36:34.509Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1127,10 +1127,10 @@
       "date": "2026-07-07",
       "home": "USA",
       "away": "Belgium",
-      "homeScore": 0,
+      "homeScore": 1,
       "awayScore": 1,
       "status": "IN_PLAY",
-      "winner": "Belgium"
+      "winner": null
     },
     {
       "id": "fd-537381",
