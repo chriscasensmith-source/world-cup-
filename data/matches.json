@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-07T20:07:13.532Z",
-  "lastSynced": "2026-07-07T20:07:13.532Z",
+  "lastChecked": "2026-07-07T20:54:15.922Z",
+  "lastSynced": "2026-07-07T20:54:15.922Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1153,7 +1153,7 @@
       "away": "Colombia",
       "homeScore": 0,
       "awayScore": 0,
-      "status": "IN_PLAY",
+      "status": "PAUSED",
       "winner": null
     },
     {
