@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-07T02:03:01.303Z",
-  "lastSynced": "2026-07-07T02:03:01.303Z",
+  "lastChecked": "2026-07-07T02:04:33.522Z",
+  "lastSynced": "2026-07-07T02:04:33.522Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1129,7 +1129,7 @@
       "away": "Belgium",
       "homeScore": 1,
       "awayScore": 4,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "winner": "Belgium"
     },
     {
