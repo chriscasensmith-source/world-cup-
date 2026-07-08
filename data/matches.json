@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-07T22:57:53.755Z",
-  "lastSynced": "2026-07-07T22:57:53.755Z",
+  "lastChecked": "2026-07-08T06:12:48.981Z",
+  "lastSynced": "2026-07-08T06:12:48.981Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1154,7 +1154,7 @@
       "homeScore": 4,
       "awayScore": 3,
       "status": "FINISHED",
-      "winner": null
+      "winner": "Switzerland"
     },
     {
       "id": "fd-537383",
@@ -1187,6 +1187,18 @@
       "date": "2026-07-11",
       "home": "Norway",
       "away": "England",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "winner": null
+    },
+    {
+      "id": "fd-537386",
+      "stage": "QF",
+      "group": null,
+      "date": "2026-07-12",
+      "home": "Argentina",
+      "away": "Switzerland",
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
