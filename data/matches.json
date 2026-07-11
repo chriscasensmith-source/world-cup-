@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-11T21:07:33.637Z",
-  "lastSynced": "2026-07-11T21:07:33.637Z",
+  "lastChecked": "2026-07-11T21:12:06.890Z",
+  "lastSynced": "2026-07-11T21:12:06.890Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1105,7 +1105,7 @@
       "away": "England",
       "homeScore": 2,
       "awayScore": 3,
-      "status": "FINISHED",
+      "status": "SCHEDULED",
       "winner": "England"
     },
     {
