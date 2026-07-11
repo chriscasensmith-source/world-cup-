@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-11T23:14:45.229Z",
-  "lastSynced": "2026-07-11T23:14:45.229Z",
+  "lastChecked": "2026-07-11T23:16:17.004Z",
+  "lastSynced": "2026-07-11T23:16:17.004Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1188,9 +1188,9 @@
       "home": "Norway",
       "away": "England",
       "homeScore": 1,
-      "awayScore": 1,
+      "awayScore": 2,
       "status": "IN_PLAY",
-      "winner": null
+      "winner": "England"
     },
     {
       "id": "fd-537386",
