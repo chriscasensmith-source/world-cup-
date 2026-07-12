@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-12T03:32:22.910Z",
-  "lastSynced": "2026-07-12T03:32:22.910Z",
+  "lastChecked": "2026-07-12T03:39:58.144Z",
+  "lastSynced": "2026-07-12T03:39:58.144Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1199,10 +1199,10 @@
       "date": "2026-07-12",
       "home": "Argentina",
       "away": "Switzerland",
-      "homeScore": 1,
+      "homeScore": 2,
       "awayScore": 1,
       "status": "IN_PLAY",
-      "winner": null
+      "winner": "Argentina"
     },
     {
       "id": "fd-537387",
