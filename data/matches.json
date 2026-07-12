@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-12T06:08:19.627Z",
-  "lastSynced": "2026-07-12T06:08:19.627Z",
+  "lastChecked": "2026-07-12T06:11:22.490Z",
+  "lastSynced": "2026-07-12T06:11:22.490Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1105,7 +1105,7 @@
       "away": "England",
       "homeScore": 2,
       "awayScore": 3,
-      "status": "SCHEDULED",
+      "status": "FINISHED",
       "winner": "England"
     },
     {
@@ -1211,6 +1211,18 @@
       "date": "2026-07-14",
       "home": "France",
       "away": "Spain",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "SCHEDULED",
+      "winner": null
+    },
+    {
+      "id": "fd-537388",
+      "stage": "SF",
+      "group": null,
+      "date": "2026-07-15",
+      "home": "England",
+      "away": "Argentina",
       "homeScore": null,
       "awayScore": null,
       "status": "SCHEDULED",
