@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-14T19:27:12.040Z",
-  "lastSynced": "2026-07-14T19:27:12.040Z",
+  "lastChecked": "2026-07-14T19:57:29.183Z",
+  "lastSynced": "2026-07-14T19:57:29.183Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1213,7 +1213,7 @@
       "away": "Spain",
       "homeScore": 0,
       "awayScore": 1,
-      "status": "IN_PLAY",
+      "status": "PAUSED",
       "winner": "Spain"
     },
     {
