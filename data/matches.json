@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-12T06:14:26.607Z",
-  "lastSynced": "2026-07-12T06:14:26.607Z",
+  "lastChecked": "2026-07-14T19:05:55.273Z",
+  "lastSynced": "2026-07-14T19:05:55.273Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1211,8 +1211,8 @@
       "date": "2026-07-14",
       "home": "France",
       "away": "Spain",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 0,
+      "awayScore": 0,
       "status": "SCHEDULED",
       "winner": null
     },
