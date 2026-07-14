@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-14T19:07:27.338Z",
-  "lastSynced": "2026-07-14T19:07:27.338Z",
+  "lastChecked": "2026-07-14T19:27:12.040Z",
+  "lastSynced": "2026-07-14T19:27:12.040Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1212,9 +1212,9 @@
       "home": "France",
       "away": "Spain",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 1,
       "status": "IN_PLAY",
-      "winner": null
+      "winner": "Spain"
     },
     {
       "id": "fd-537388",
