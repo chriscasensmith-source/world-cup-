@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2026-07-15T20:57:59.986Z",
-  "lastSynced": "2026-07-15T20:57:59.986Z",
+  "lastChecked": "2026-07-15T21:10:10.325Z",
+  "lastSynced": "2026-07-15T21:10:10.325Z",
   "syncNote": "Auto-synced from football-data.org (WC).",
   "source": "football-data.org",
   "matches": [
@@ -1225,7 +1225,7 @@
       "away": "Argentina",
       "homeScore": 1,
       "awayScore": 2,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "winner": "Argentina"
     }
   ]
